@@ -1,0 +1,23 @@
+{
+  "name": "personal-site-v2",
+  "private": true,
+  "scripts": {
+    "build": "gridsome build",
+    "develop": "gridsome develop",
+    "explore": "gridsome explore"
+  },
+  "dependencies": {
+    "@gridsome/source-filesystem": "^0.6.2",
+    "gridsome": "^0.7.0",
+    "gridsome-plugin-fathom": "^0.0.16",
+    "gridsome-plugin-remark-mermaid": "^1.0.1"
+  },
+  "devDependencies": {
+    "@gridsome/transformer-remark": "^0.6.4",
+    "@tailwindcss/postcss7-compat": "npm:@tailwindcss/postcss7-compat",
+    "autoprefixer": "^9",
+    "gridsome-plugin-tailwindcss": "^4.1.1",
+    "postcss": "^7",
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat"
+  }
+}
