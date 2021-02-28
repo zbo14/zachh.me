@@ -3,10 +3,10 @@
 
 // Changes here require a server restart.
 // To restart press CTRL + C in terminal and run `gridsome develop`
-const tailwindcss = require("tailwindcss");
+const tailwindcss = require('tailwindcss');
 
 module.exports = {
-  siteName: 'zb',
+  siteName: 'zach balder',
 
   css: {
     loaderOptions: {

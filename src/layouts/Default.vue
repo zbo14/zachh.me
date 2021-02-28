@@ -1,6 +1,6 @@
 <template>
   <div class="bg-indigo-100">
-    <div class="max-w-screen-md mx-auto flex flex-col min-h-screen">
+    <div class="text-center sm:text-left max-w-screen-md mx-auto flex flex-col min-h-screen">
       <header class="h-10 my-8">
         <nav class="nav">
           <g-link class="p-2 inline-flex text-black" to="/"><p>Hi</p><i class=" ml-2 ri-user-smile-fill" /></g-link>

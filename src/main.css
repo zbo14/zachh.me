@@ -6,7 +6,7 @@
   }
 
   a {
-    @apply text-pink-600;
+    @apply text-blue-600;
   }
 
   a:hover {
