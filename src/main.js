@@ -12,9 +12,15 @@ export default function (Vue, { router, head, isClient }) {
     lang: 'en_US'
   }
 
-  head.bodyAttrs = {
-    class: 'antialiased bg-gray-100 text-gray-900'
-  }
+  head.link.push({
+    rel: 'preconnect',
+    href: 'https://fonts.gstatic.com'
+  })
+
+  head.link.push({
+    rel: 'stylesheet',
+    href: 'https://fonts.googleapis.com/css2?family=Alegreya+Sans&display=swap'
+  })
 
   head.link.push({
     rel: 'stylesheet',

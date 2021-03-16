@@ -11,9 +11,12 @@ When it comes to secure, user-friendly messaging apps, it doesn't get much bette
 <br>
 
 Signal (or more specifically the [Signal Protocol](https://en.wikipedia.org/wiki/Signal_Protocol)) was the first to employ end-to-end encryption via the [Double Ratchet Algorithm](https://en.wikipedia.org/wiki/Double_Ratchet_Algorithm). In fact, the Signal Protocol designers wrote the [specification](https://signal.org/docs/specifications/doubleratchet/) for Double Ratchet. This algorithm is important and used by many other messaging apps because it provides three critical properties:
-* End-to-end encryption
-* Forward security
-* Break-in recovery
+
+<br>
+
+  * End-to-end encryption
+  * Forward security
+  * Break-in recovery
 
 <br>
 

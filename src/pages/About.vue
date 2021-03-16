@@ -1,15 +1,13 @@
 <template>
   <Layout>
-    <p><b>Hi, my name's Zach!</b> I'm a software engineer and occasional bug-bounty hunter interested in all things web. I love to write backend code and design distributed applications. Projects are my favorite way to learn and I use some of them daily, including <g-link href="/blog/passing-passwords-to-myself">this password manager</g-link> and <g-link href="/blog/diy-vp-ns/">this VPN</g-link>. Typically, coffee and beer are the bookends to my day. In my free time, I like to sing and play keyboard. Every once in a blue moon, I'll scrape the rust off my saxophone.</p>
-    <h1 class="my-4">My path</h1>
-    <div class="grid grid-cols-7" v-for="(step, idx) in myPath" :key="idx">
-      <div>
+    <p><b>Hi, my name's Zach!</b> I'm a software engineer and occasional bug-bounty hunter interested in all things web. I love to write backend code and design distributed applications. Typically, coffee and beer are the bookends to my day. In my free time, I like to sing and play keyboard. Every once in a blue moon, I'll scrape the rust off my saxophone.</p>
+    <h1 class="font-heading mt-8">My path</h1>
+    <div v-for="(step, idx) in myPath" :key="idx">
+      <div class="inline-flex">
         <img :class="[step.image.height, step.image.width, 'my-8', 'rounded'].filter(Boolean)" :src="getImgURL(step.image.file)">
+        <g-link class="font-semibold mx-4 my-auto text-black text-lg" :href="step.company.link">{{ step.company.name }}</g-link>
       </div>
-      <div class="-mx-8 my-auto">
-        <g-link class="font-semibold text-black text-lg" :href="step.company.link">{{ step.company.name }}</g-link>
-      </div>
-      <div class="col-span-5 -mx-8 my-auto">
+      <div>
         <p>{{ step.description }}  <g-link class="my-auto" v-if="step.company.hiring" :href="step.company.hiring">And we're hiring!</g-link></p>
       </div>
     </div>
@@ -34,7 +32,7 @@ export default {
             link: 'https://ujomusic.com'
           },
 
-          description: 'As a software developer here, I worked at the intersection of music and decentralized technologies, including Ethereum and IPFS.'
+          description: 'As a software developer at Ujo, I worked at the intersection of music and decentralized technologies, including Ethereum and IPFS.'
         },
         {
           image: {
@@ -74,7 +72,7 @@ export default {
   methods: {
     getImgURL (filename) {
       const imgs = require.context('../../static/images/')
-      return imgs('./' + filename )
+      return imgs('./' + filename)
     }
   },
 

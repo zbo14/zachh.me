@@ -1,12 +1,13 @@
 <template>
-  <div class="bg-indigo-100">
-    <div class="text-center sm:text-left max-w-screen-md mx-auto flex flex-col min-h-screen">
+  <div class="bg-indigo-100 font-custom">
+    <div class="max-w-screen-md mx-auto flex flex-col min-h-screen px-2 sm:px-0 text-sm sm:text-base">
       <header class="h-10 my-8">
         <nav class="nav">
-          <g-link class="p-2 inline-flex text-black" to="/"><p>Hi</p><i class=" ml-2 ri-user-smile-fill" /></g-link>
-          <g-link class="ml-8 p-2 inline-flex text-black" to="/about/">About<i class="ml-2 ri-user-fill" /></g-link>
-          <g-link class="ml-8 p-2 inline-flex text-black" to="/blog/">Blog<i class="ml-2 ri-book-read-fill" /></g-link>
-          <g-link class="ml-8 p-2 inline-flex text-black" to="/resume/">Résumé<i class="ml-2 ri-file-paper-2-fill" /></g-link>
+          <g-link class="inline-flex text-black" to="/"><p>Hi</p><i class=" ml-1 ri-user-smile-fill" /></g-link>
+          <g-link class="ml-4 sm:ml-10 inline-flex text-black" to="/about/">About<i class="ml-1 ri-user-fill" /></g-link>
+          <g-link class="ml-4 sm:ml-10 inline-flex text-black" to="/blog/">Blog<i class="ml-1 ri-book-read-fill" /></g-link>
+          <g-link class="ml-4 sm:ml-10 inline-flex text-black" to="/projects/">Projects<i class="ml-1 ri-book-read-fill" /></g-link>
+          <g-link class="ml-4 sm:ml-10 inline-flex text-black" to="/resume/">Résumé<i class="ml-1 ri-file-paper-2-fill" /></g-link>
         </nav>
       </header>
       <main class="mb-auto">

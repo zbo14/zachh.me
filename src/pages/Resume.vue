@@ -1,21 +1,25 @@
 <template>
   <Layout>
-    <h1 class="my-4">Summary</h1>
+    <div class="text-xs sm:text-base">
+    <h1 class="mb-4">Summary</h1>
     <p class="my-4">Backend software engineer interested in designing applications and building web infrastructure with availability, scalability, and flexibility in mind.</p>
     <h1 class="my-4">Technical Skills</h1>
-    <div class="flex items-start my-4">
-      <div class="mr-5">
-        <p class="font-semibold py-1" v-for="category in technicalSkills.categories" :key="category">{{ category }}:</p>
-      </div>
-      <div>
-        <p class="py-1" v-for="(values, idx) in technicalSkills.values" :key="idx">{{ values.join(', ') }}</p>
-      </div>
-    </div>
+    <table class="table-auto">
+      <thead>
+      </thead>
+      <tbody>
+        <tr v-for="(skills, category) in technicalSkills" class="border-separate border-b border-t border-black rounded-lg" :key="category">
+          <td class="align-top border-separate border-r border-black font-semibold p-2 rounded-lg">{{ category }}</td>
+          <td class="italic p-2">{{ skills.join(', ') }}</td>
+        </tr>
+      </tbody>
+    </table>
     <h1 class="my-4">Work Experience</h1>
     <div class="my-4" v-for="job in jobs" :key="job.company">
-      <h2 class="font-semibold text-lg">{{ job.company }}, {{ job.role }} // {{ job.start }} - {{ job.end }}</h2>
-        <p class="italic text-sm">Tech used: {{ job.techUsed.join(', ') }}</p>
-        <ul class="list-disc list-inside m-2">
+      <h2 class="font-semibold">{{ job.company }}, {{ job.role }}</h2>
+        <p>{{ job.start }} - {{ job.end }}</p>
+        <p class="italic">Tech used: {{ job.techUsed.join(', ') }}</p>
+        <ul class="list-disc list-inside">
           <li v-for="action in job.actions">{{ action }}</li>
         </ul>
     </div>
@@ -25,25 +29,21 @@
     </div>
     <h1 class="my-4">Bug Bounty</h1>
     <div class="my-4">
-      <ul class="list-disc list-inside m-2">
+      <ul class="list-disc list-inside">
         <li v-for="item in bugBounty">
-          <span v-if="typeof item === 'string'">{{ item }}</span>
+          <span>{{ item }}</span>
         </li>
       </ul>
     </div>
     <h1 class="my-4">Interests</h1>
     <div class="my-4">
-      <ul class="list-disc list-inside m-2">
+      <ul class="list-disc list-inside">
         <li v-for="interest in interests">
-          <span v-if="typeof interest === 'string'">{{ interest }}</span>
-          <ul v-else class="list-disc list-inside m-2">
-            <li v-for="subInterest in interest">
-              {{ subInterest }}
-            </li>
-          </ul>
+          <span>{{ interest }}</span>
         </li>
       </ul>
     </div>
+  </div>
   </Layout>
 </template>
 
@@ -56,67 +56,63 @@ export default {
   data () {
     return {
       technicalSkills: {
-        categories: [
-          'Languages',
-          'Frameworks',
-          'Databases',
-          'Cloud',
-          'AWS',
-          'Proxies',
-          'VPNs'
+        Languages: [
+          'JavaScript',
+          'Go',
+          'Python',
+          'Bash'
         ],
 
-        values: [
-          [
-            'JavaScript',
-            'Go',
-            'Python',
-            'Bash'
-          ],
-          [
-            'Fastify',
-            'Vue',
-            'Express',
-            'React'
-          ],
-          [
-            'MongoDB',
-            'Redis',
-            'DynamoDB',
-            'Elasticsearch'
-          ],
-          [
-            'AWS',
-            'DigitalOcean',
-            'Vultr'
-          ],
-          [
-            'CloudFront',
-            'CloudWatch',
-            'EC2',
-            'ELB/ALB',
-            'Lambda@edge',
-            'S3'
-          ],
-          [
-            'Burp',
-            'HAProxy',
-            'HTTP/S',
-            'SOCKS+SSH'
-          ],
-          [
-            'WireGuard',
-            'OpenVPN',
-            'Perimeter 81'
-          ]
+        Frameworks: [
+          'Fastify',
+          'Vue',
+          'Express',
+          'React'
+        ],
+
+        Databases: [
+          'MongoDB',
+          'Redis',
+          'DynamoDB',
+          'Elasticsearch'
+        ],
+
+        'Cloud/CDN': [
+          'AWS',
+          'DigitalOcean',
+          'Vultr',
+          'Netlify',
+          'GitHub Pages'
+        ],
+
+        AWS: [
+          'CloudFront',
+          'CloudWatch',
+          'EC2',
+          'ELB/ALB',
+          'Lambda',
+          'S3'
+        ],
+
+        Proxies: [
+          'Burp',
+          'HAProxy',
+          'HTTP/S',
+          'SOCKS+SSH'
+        ],
+
+        VPNs: [
+          'WireGuard',
+          'OpenVPN',
+          'Perimeter 81'
         ]
       },
 
       bugBounty: [
-        'Participated in public bug-bounty programs in 2020 and refined web hacking skills',
-        'July 2020: Awarded $2K for bug reported to Robinhood\'s HackerOne program',
-        'April 2020: Awarded $750 bounty for bug reported to Robinhood\'s HackerOne program',
-        'March 2020: Awarded $150 bounty for bug reported to Glassdoor\'s HackerOne program'
+        'Participated in bug-bounty programs and refined web hacking skills',
+        'Jul 2020: Awarded $2K for bug on Robinhood\'s HackerOne',
+        'Apr 2020: Awarded $750 bounty for bug on Robinhood\'s HackerOne',
+        'Mar 2020: Awarded $150 bounty for bug on Glassdoor\'s HackerOne'
       ],
 
       interests: [
@@ -145,9 +141,9 @@ export default {
 
           actions: [
             'Contributed code and PR review on main product application',
-            'Introduced Slack webhooks to aid with debugging and lower incident response times',
-            'Secured cloud resources with remote VPN and prepared for SOC2 posture',
-            'Coordinated frontend migration to CDN to improve performance and user experience of our product'
+            'Introduced Slack webhooks to lower incident response times',
+            'Secured cloud resources with VPN and prepared for SOC2 posture',
+            'Led frontend migration to CDN to improve performance & UX'
           ]
         },
         {
@@ -165,10 +161,10 @@ export default {
           ],
 
           actions: [
-            'Wrote code for and provided code review on several internal projects',
-            'Developed software library to make symmetric encryption more convenient for team',
-            'Implemented SNMP service to fetch and modify configuration for field hardware',
-            'Learned how to write full-coverage tests and weigh engineering decisions'
+            'Contributed code and PR review on several internal projects',
+            'Built library to make symmetric encryption more convenient for team',
+            'Implemented SNMP service to fetch/modify config for field hardware',
+            'Wrote full-coverage tests and made infrastructure design decisions'
           ]
         },
         {
@@ -184,10 +180,10 @@ export default {
           ],
 
           actions: [
-            'Worked on project for querying/persisting linked metadata (IPLD) and media to IPFS',
-            'Built prototypes on top of other decentralized platforms (e.g. BigchainDB, Swarm)',
+            'Worked on project for querying/persisting linked data on IPFS',
+            'Built prototypes on other decentralized platforms (e.g. BigchainDB)',
             'Made open source contributions to the COALA IP organization',
-            'Collaborated with other team members in agile development process'
+            'Collaborated with other team members in agile environment'
           ]
         },
         {
@@ -203,7 +199,7 @@ export default {
           ],
 
           actions: [
-            'Collaborated with small team of programmers on Ethereum Blockchain project',
+            'Collaborated with dev team on Ethereum Blockchain project',
             'Picked up Clojure and became familiar with code repositories',
             'Wrote tests and benchmarks for API calls'
           ]
