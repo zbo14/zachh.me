@@ -4,10 +4,10 @@
       <header class="h-10 my-4 sm:my-8">
         <nav class="nav">
           <g-link class="hover:text-xs inline-flex text-black" to="/"><p>Hi</p><i class=" ml-1 ri-user-smile-fill" /></g-link>
-          <g-link class="ml-6 sm:ml-12 inline-flex text-black" to="/about/">About<i class="ml-1 ri-user-fill" /></g-link>
-          <g-link class="ml-6 sm:ml-12 inline-flex text-black" to="/blog/">Blog<i class="ml-1 ri-book-read-fill" /></g-link>
-          <g-link class="ml-6 sm:ml-12 inline-flex text-black" to="/projects/">Projects<i class="ml-1 ri-artboard-fill" /></g-link>
-          <g-link class="ml-6 sm:ml-12 inline-flex text-black" to="/resume/">Résumé<i class="ml-1 ri-file-paper-2-fill" /></g-link>
+          <g-link class="ml-4 sm:ml-12 inline-flex text-black" to="/about/">About<i class="ml-1 ri-user-fill" /></g-link>
+          <g-link class="ml-4 sm:ml-12 inline-flex text-black" to="/blog/">Blog<i class="ml-1 ri-book-read-fill" /></g-link>
+          <g-link class="ml-4 sm:ml-12 inline-flex text-black" to="/projects/">Projects<i class="ml-1 ri-artboard-fill" /></g-link>
+          <g-link class="ml-4 sm:ml-12 inline-flex text-black" to="/resume/">Résumé<i class="ml-1 ri-file-paper-2-fill" /></g-link>
         </nav>
       </header>
       <main class="mb-auto">
