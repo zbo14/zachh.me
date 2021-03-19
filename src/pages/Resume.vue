@@ -10,23 +10,24 @@
       <tbody>
         <tr v-for="(skills, category) in technicalSkills" class="border-separate border-b border-t border-black rounded-lg" :key="category">
           <td class="align-top border-separate border-r border-black font-semibold p-2 rounded-lg">{{ category }}</td>
-          <td class="italic p-2">{{ skills.join(', ') }}</td>
+          <td class="p-2">{{ skills.join(', ') }}</td>
         </tr>
       </tbody>
     </table>
     <h1 class="my-4">Work Experience</h1>
     <div class="my-4" v-for="job in jobs" :key="job.company">
       <h2 class="font-semibold">{{ job.company }}, {{ job.role }}</h2>
-        <p>{{ job.start }} - {{ job.end }}</p>
-        <p class="italic">Tech used: {{ job.techUsed.join(', ') }}</p>
+        <div class="pt-1 pb-2">
+          <p>{{ job.start }} - {{ job.end }}</p>
+          <p class="italic">Tech used: {{ job.techUsed.join(', ') }}</p>
+        </div>
         <ul class="list-disc list-inside">
           <li v-for="action in job.actions">{{ action }}</li>
         </ul>
     </div>
-    <h1 class="my-4">Education</h1>
-    <div class="my-4">
-      <p>Northwestern University // Sep 2013 - Jun 2016</p>
-    </div>
+    <h1 class="mt-4">Education</h1>
+    <h2>Northwestern University</h2>
+    <p>Sep 2013 - Jun 2016</p>
     <h1 class="my-4">Bug Bounty</h1>
     <div class="my-4">
       <ul class="list-disc list-inside">
@@ -109,10 +110,10 @@ export default {
       },
 
       bugBounty: [
-        'Participated in bug-bounty programs and refined web hacking skills',
-        'Jul 2020: Awarded $2K for bug on Robinhood\'s HackerOne',
-        'Apr 2020: Awarded $750 bounty for bug on Robinhood\'s HackerOne',
-        'Mar 2020: Awarded $150 bounty for bug on Glassdoor\'s HackerOne'
+        'Participated in bug-bounty programs and refined hacking skills',
+        'Jul 2020: $2K for bug on Robinhood\'s HackerOne',
+        'Apr 2020: $750 bounty for bug on Robinhood\'s HackerOne',
+        'Mar 2020: $150 bounty for bug on Glassdoor\'s HackerOne'
       ],
 
       interests: [
@@ -120,7 +121,7 @@ export default {
         'Computer networking',
         'Distributed systems',
         'Cyber Security',
-        'Singing / playing keyboard / occasionally saxophone',
+        'Singing / keyboard / saxophone',
         'Twin Peaks'
       ],
 
@@ -162,9 +163,9 @@ export default {
 
           actions: [
             'Contributed code and PR review on several internal projects',
-            'Built library to make symmetric encryption more convenient for team',
-            'Implemented SNMP service to fetch/modify config for field hardware',
-            'Wrote full-coverage tests and made infrastructure design decisions'
+            'Built library to make symmetric encryption easier for team',
+            'Created SNMP service to fetch/modify config for field hardware',
+            'Wrote full-coverage tests and made infra design decisions'
           ]
         },
         {
@@ -181,7 +182,7 @@ export default {
 
           actions: [
             'Worked on project for querying/persisting linked data on IPFS',
-            'Built prototypes on other decentralized platforms (e.g. BigchainDB)',
+            'Built prototypes on decentralized platforms (e.g. BigchainDB)',
             'Made open source contributions to the COALA IP organization',
             'Collaborated with other team members in agile environment'
           ]

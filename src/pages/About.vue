@@ -4,7 +4,7 @@
     <h1 class="font-heading mt-8">My path</h1>
     <div v-for="(step, idx) in myPath" :key="idx">
       <div class="inline-flex">
-        <img :class="[step.image.height, step.image.width, 'my-8', 'rounded'].filter(Boolean)" :src="getImgURL(step.image.file)">
+        <img :class="[step.image.height, step.image.width, 'my-6', 'rounded'].filter(Boolean)" :src="getImgURL(step.image.file)">
         <g-link class="font-semibold mx-4 my-auto text-black text-lg" :href="step.company.link">{{ step.company.name }}</g-link>
       </div>
       <div>

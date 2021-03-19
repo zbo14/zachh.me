@@ -13,13 +13,8 @@ export default function (Vue, { router, head, isClient }) {
   }
 
   head.link.push({
-    rel: 'preconnect',
-    href: 'https://fonts.gstatic.com'
-  })
-
-  head.link.push({
     rel: 'stylesheet',
-    href: 'https://fonts.googleapis.com/css2?family=Alegreya+Sans&display=swap'
+    href: 'https://fonts.googleapis.com/css2?family=Inconsolata&display=swap'
   })
 
   head.link.push({

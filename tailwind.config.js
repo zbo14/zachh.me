@@ -1,17 +1,21 @@
 module.exports = {
   purge: [],
-  theme: {
-    extend: {
-      boxShadow: {
-        link: '0 -4px 0 0 rgba(236, 72, 153, .5) inset'
-      },
 
-      fontFamily: {
-        custom: ['Alegreya+Sans', 'sans-serif']
+  theme: {
+    fontFamily: {
+      custom: ['Inconsolata', 'sans-serif']
+    },
+
+    extend: {
+      textShadow: {
+        custom: '3px 3px 6px rgb(236 72 153 / 30%), 0 0 5px rgb(236 72 153 / 30%)'
       }
     }
   },
 
   variants: {},
-  plugins: []
+
+  plugins: [
+    require('tailwindcss-textshadow')
+  ]
 }
