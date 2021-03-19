@@ -110,7 +110,6 @@ export default {
       },
 
       bugBounty: [
-        'Participated in bug-bounty programs and refined hacking skills',
         'Jul 2020: $2K for bug on Robinhood\'s HackerOne',
         'Apr 2020: $750 bounty for bug on Robinhood\'s HackerOne',
         'Mar 2020: $150 bounty for bug on Glassdoor\'s HackerOne'
@@ -143,7 +142,7 @@ export default {
           actions: [
             'Contributed code and PR review on main product application',
             'Introduced Slack webhooks to lower incident response times',
-            'Secured cloud resources with VPN and prepared for SOC2 posture',
+            'Secured cloud resources with VPN in preparation for audit',
             'Led frontend migration to CDN to improve performance & UX'
           ]
         },
@@ -162,9 +161,9 @@ export default {
           ],
 
           actions: [
-            'Contributed code and PR review on several internal projects',
+            'Contributed code and PR review on several projects',
             'Built library to make symmetric encryption easier for team',
-            'Created SNMP service to fetch/modify config for field hardware',
+            'Created SNMP service to configure field hardware',
             'Wrote full-coverage tests and made infra design decisions'
           ]
         },
@@ -181,9 +180,8 @@ export default {
           ],
 
           actions: [
-            'Worked on project for querying/persisting linked data on IPFS',
-            'Built prototypes on decentralized platforms (e.g. BigchainDB)',
-            'Made open source contributions to the COALA IP organization',
+            'Worked on project for handling linked data in IPFS',
+            'Made open source contributions to the COALA IP org',
             'Collaborated with other team members in agile environment'
           ]
         },
@@ -201,7 +199,7 @@ export default {
 
           actions: [
             'Collaborated with dev team on Ethereum Blockchain project',
-            'Picked up Clojure and became familiar with code repositories',
+            'Picked up Clojure and became familiar with source code',
             'Wrote tests and benchmarks for API calls'
           ]
         }
