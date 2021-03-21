@@ -15,9 +15,9 @@
       </main>
       <footer class="h-10 mt-8">
         <div class="flex opacity-75">
-          <div class="inline-flex my-auto mr-6">
-            <p class="mr-1 text-sm">Zach Balder</p>
-            <i class="ri-copyright-line ri-xs"/>
+          <div class="inline-flex mr-6 my-auto">
+            <p class="mr-1 my-auto text-sm">Zach Balder</p>
+            <i class="my-auto ri-copyright-line ri-xs"/>
           </div>
           <div class="ml-4" v-for="profile in profiles">
             <g-link class="hover:no-underline" :href="profile.link">

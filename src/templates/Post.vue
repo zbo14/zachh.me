@@ -1,8 +1,8 @@
 <template>
   <Layout>
     <div>
-      <h1 class="text-xl font-semibold p-1">{{ $page.post.title }}</h1>
-      <span class="font-light italic p-1 text-sm">{{ $page.post.date }}</span>
+      <h1 class="p-1">{{ $page.post.title }}</h1>
+      <span class="font-light italic p-1">{{ $page.post.date }}</span>
       <div class="p-1" v-html="$page.post.content" />
       <div class="flex my-8">
         <g-link class="text-black" to="/blog"><< back to blog</g-link>

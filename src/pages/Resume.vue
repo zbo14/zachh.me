@@ -1,7 +1,7 @@
 <template>
   <Layout>
     <div class="text-xs sm:text-base">
-    <h1 class="mb-4">Summary</h1>
+    <h1 class="mb-4">Overview</h1>
     <p class="my-4">Backend software engineer interested in designing applications and building web infrastructure with availability, scalability, and flexibility in mind.</p>
     <h1 class="my-4">Technical Skills</h1>
     <table class="table-auto">
@@ -19,7 +19,7 @@
       <h2 class="font-semibold">{{ job.company }}, {{ job.role }}</h2>
         <div class="pt-1 pb-2">
           <p>{{ job.start }} - {{ job.end }}</p>
-          <p class="italic">Tech used: {{ job.techUsed.join(', ') }}</p>
+          <p class="italic">Tech: {{ job.techUsed.join(', ') }}</p>
         </div>
         <ul class="list-disc list-inside">
           <li v-for="action in job.actions">{{ action }}</li>
@@ -45,6 +45,10 @@
       </ul>
     </div>
   </div>
+  <button class="flex mt-8 my-auto text-black" @click="print">
+    <p class="no-print my-auto">Print this document</p>
+    <i class="no-print ml-2 my-auto ri-download-2-fill"/>
+  </button>
   </Layout>
 </template>
 
@@ -52,6 +56,15 @@
 export default {
   metaInfo: {
     title: 'Resume'
+  },
+
+  methods: {
+    print () {
+      const { title } = document
+      document.title = 'ZACH BALDER | zmbalder@gmail.com'
+      window.print()
+      document.title = title
+    }
   },
 
   data () {

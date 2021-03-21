@@ -10,7 +10,8 @@
     "@gridsome/source-filesystem": "^0.6.2",
     "gridsome": "^0.7.0",
     "gridsome-plugin-fathom": "^0.0.16",
-    "gridsome-plugin-remark-mermaid": "^1.0.1"
+    "gridsome-plugin-remark-mermaid": "^1.0.1",
+    "vue-html2pdf": "^1.8.0"
   },
   "devDependencies": {
     "@gridsome/transformer-remark": "^0.6.4",

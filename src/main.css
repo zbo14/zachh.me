@@ -6,7 +6,7 @@
   }
 
   h2 {
-    @apply font-semibold text-base sm:text-xl;
+    @apply text-base sm:text-xl;
   }
 
   a {
@@ -15,6 +15,17 @@
 
   a:hover {
     @apply no-underline text-shadow-custom
+  }
+
+  @media print {
+    header, footer, .no-print {
+      display: none;
+    }
+
+    @page {
+      size: auto;
+      margin: 20mm;
+    }
   }
 }
 
