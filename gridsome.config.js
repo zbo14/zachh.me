@@ -6,7 +6,7 @@
 const tailwindcss = require('tailwindcss');
 
 module.exports = {
-  siteName: 'zach balder',
+  siteName: 'Zach Balder',
 
   css: {
     loaderOptions: {
@@ -17,6 +17,8 @@ module.exports = {
       }
     }
   },
+
+  icon: 'static/icons/favicon-32x32.png',
 
   plugins: [
     {
@@ -45,6 +47,8 @@ module.exports = {
   templates: {
     Post: '/blog/:title'
   },
+
+  titleTemplate: 'Zach Balder ~ %s',
 
   transformers: {
     remark: {

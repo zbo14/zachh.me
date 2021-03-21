@@ -81,9 +81,8 @@ export default {
         'Cloud/CDN': [
           'AWS',
           'DigitalOcean',
-          'Vultr',
-          'Netlify',
-          'GitHub Pages'
+          'GitHub Pages',
+          'Netlify'
         ],
 
         AWS: [
@@ -111,8 +110,8 @@ export default {
 
       bugBounty: [
         'Jul 2020: $2K for bug on Robinhood\'s HackerOne',
-        'Apr 2020: $750 bounty for bug on Robinhood\'s HackerOne',
-        'Mar 2020: $150 bounty for bug on Glassdoor\'s HackerOne'
+        'Apr 2020: $750 for bug on Robinhood\'s HackerOne',
+        'Mar 2020: $150 for bug on Glassdoor\'s HackerOne'
       ],
 
       interests: [
