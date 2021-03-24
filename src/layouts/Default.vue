@@ -3,11 +3,23 @@
     <div class="max-w-screen-md mx-auto flex flex-col min-h-screen px-2 sm:px-0 text-sm sm:text-base">
       <header class="h-10 my-4 sm:my-8">
         <nav class="nav">
-          <g-link class="hover:text-xs inline-flex text-black" to="/"><p>Hi</p><i class=" ml-1 ri-user-smile-fill" /></g-link>
-          <g-link class="ml-4 sm:ml-12 inline-flex text-black" to="/about/">About<i class="ml-1 ri-user-fill" /></g-link>
-          <g-link class="ml-4 sm:ml-12 inline-flex text-black" to="/blog/">Blog<i class="ml-1 ri-book-read-fill" /></g-link>
-          <g-link class="ml-4 sm:ml-12 inline-flex text-black" to="/projects/">Projects<i class="ml-1 ri-artboard-fill" /></g-link>
-          <g-link class="ml-4 sm:ml-12 inline-flex text-black" to="/resume/">Résumé<i class="ml-1 ri-file-paper-2-fill" /></g-link>
+          <div class="flex justify-between w-3/4">
+            <g-link v-for="(page, index) in pages" class="hidden sm:inline-flex text-black" :to="page.path" :key="index">
+              <p class="pr-0.5">{{ page.text }}</p><i :class="`ml-1 ri-${page.icon}-fill`" />
+            </g-link>
+            <div v-click-outside="() => { showMenu = false }" class="sm:hidden inline-block right-0 text-left">
+              <div class="absolute inset-y-1 right-1">
+                <button @click="showMenu = !showMenu" type="button" class="rounded-md shadow-sm px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                  <i class="ri-menu-fill" />
+                </button>
+              </div>
+              <div v-if="showMenu" class="origin-top-right absolute right-1 mt-6 bg-indigo-200 rounded-md ring-1 ring-black ring-opacity-5 divide-y divide-blue-100" role="menu" aria-orientation="vertical">
+                <g-link v-for="(page, index) in pages" class="flex px-4 py-2 mr-4 text-black" :to="page.path" :key="index">
+                  <i :class="`mr-2 ri-${page.icon}-fill`" /><p class="pr-0.5">{{ page.text }}</p>
+                </g-link>
+              </div>
+            </div>
+          </div>
         </nav>
       </header>
       <main class="mb-auto">
@@ -34,6 +46,34 @@
 export default {
   data () {
     return {
+      pages: [
+        {
+          icon: 'user-smile',
+          path: '/',
+          text: 'Hi'
+        },
+        {
+          icon: 'user',
+          path: '/about/',
+          text: 'About'
+        },
+        {
+          icon: 'book-read',
+          path: '/blog/',
+          text: 'Blog'
+        },
+        {
+          icon: 'artboard',
+          path: '/projects/',
+          text: 'Projects'
+        },
+        {
+          icon: 'file-paper-2',
+          path: '/resume/',
+          text: 'Résumé'
+        }
+      ],
+
       profiles: [
         {
           class: 'ri-github-fill',
@@ -50,8 +90,20 @@ export default {
         {
           class: 'ri-twitter-fill',
           link: 'https://twitter.com/digitalAn4log'
+        },
+        {
+          class: 'ri-instagram-fill',
+          link: 'https://www.instagram.com/zachbalder'
         }
-      ]
+      ],
+
+      showMenu: false
+    }
+  },
+
+  methods: {
+    hideMenu () {
+      this.showMenu = false
     }
   }
 }

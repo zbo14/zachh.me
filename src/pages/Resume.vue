@@ -1,54 +1,55 @@
 <template>
   <Layout>
     <div class="text-xs sm:text-base">
-    <h1 class="mb-4">Overview</h1>
-    <p class="my-4">Backend software engineer interested in designing applications and building web infrastructure with availability, scalability, and flexibility in mind.</p>
-    <h1 class="my-4">Technical Skills</h1>
-    <table class="table-auto">
-      <thead>
-      </thead>
-      <tbody>
-        <tr v-for="(skills, category) in technicalSkills" class="border-separate border-b border-t border-black rounded-lg" :key="category">
-          <td class="align-top border-separate border-r border-black font-semibold p-2 rounded-lg">{{ category }}</td>
-          <td class="p-2">{{ skills.join(', ') }}</td>
-        </tr>
-      </tbody>
-    </table>
-    <h1 class="my-4">Work Experience</h1>
-    <div class="my-4" v-for="job in jobs" :key="job.company">
-      <h2 class="font-semibold">{{ job.company }}, {{ job.role }}</h2>
-        <div class="pt-1 pb-2">
-          <p>{{ job.start }} - {{ job.end }}</p>
-          <p class="italic">Tech: {{ job.techUsed.join(', ') }}</p>
-        </div>
+      <h1>Zach Balder</h1>
+      <h2 class="mb-4">zmbalder{at}gmail{dot}com</h2>
+      <p class="my-4">Backend software engineer interested in designing applications and building web infrastructure with availability, scalability, and flexibility in mind.</p>
+      <h1 class="my-4">Technical Skills</h1>
+      <table>
+        <thead>
+        </thead>
+        <tbody>
+          <tr v-for="(skills, category) in technicalSkills" class="border-separate border-b border-t border-black rounded-lg" :key="category">
+            <td class="align-top border-separate border-r border-black font-semibold p-2 rounded-lg">{{ category }}</td>
+            <td class="p-2">{{ skills.join(', ') }}</td>
+          </tr>
+        </tbody>
+      </table>
+      <h1 class="my-4">Work Experience</h1>
+      <div class="my-4" v-for="job in jobs" :key="job.company">
+        <h2 class="font-semibold">{{ job.company }}, {{ job.role }}</h2>
+          <div class="pt-1 pb-2">
+            <p>{{ job.start }} - {{ job.end }}</p>
+            <p class="italic">Tech: {{ job.techUsed.join(', ') }}</p>
+          </div>
+          <ul class="list-disc list-inside">
+            <li v-for="action in job.actions">{{ action }}</li>
+          </ul>
+      </div>
+      <h1 class="mt-4">Education</h1>
+      <h2>Northwestern University</h2>
+      <p>Sep 2013 - Jun 2016</p>
+      <h1 class="my-4">Bug Bounty</h1>
+      <div class="my-4">
         <ul class="list-disc list-inside">
-          <li v-for="action in job.actions">{{ action }}</li>
+          <li v-for="item in bugBounty">
+            <span>{{ item }}</span>
+          </li>
         </ul>
+      </div>
+      <h1 class="my-4">Interests</h1>
+      <div class="my-4">
+        <ul class="list-disc list-inside">
+          <li v-for="interest in interests">
+            <span>{{ interest }}</span>
+          </li>
+        </ul>
+      </div>
     </div>
-    <h1 class="mt-4">Education</h1>
-    <h2>Northwestern University</h2>
-    <p>Sep 2013 - Jun 2016</p>
-    <h1 class="my-4">Bug Bounty</h1>
-    <div class="my-4">
-      <ul class="list-disc list-inside">
-        <li v-for="item in bugBounty">
-          <span>{{ item }}</span>
-        </li>
-      </ul>
-    </div>
-    <h1 class="my-4">Interests</h1>
-    <div class="my-4">
-      <ul class="list-disc list-inside">
-        <li v-for="interest in interests">
-          <span>{{ interest }}</span>
-        </li>
-      </ul>
-    </div>
-  </div>
-  <button class="flex mt-8 my-auto text-black" @click="print">
-    <p class="no-print my-auto">Print this document</p>
-    <i class="no-print ml-2 my-auto ri-download-2-fill"/>
-  </button>
+    <button class="flex mt-8 my-auto text-black text-xs sm:text-sm" @click="print">
+      <p class="no-print">Print this document</p>
+      <i class="animate-bounce no-print ml-2 ri-printer-fill"/>
+    </button>
   </Layout>
 </template>
 
@@ -61,7 +62,7 @@ export default {
   methods: {
     print () {
       const { title } = document
-      document.title = 'ZACH BALDER | zmbalder@gmail.com'
+      document.title = ''
       window.print()
       document.title = title
     }
@@ -155,7 +156,8 @@ export default {
             'Contributed code and PR review on main product application',
             'Introduced Slack webhooks to lower incident response times',
             'Secured cloud resources with VPN in preparation for audit',
-            'Led frontend migration to CDN to improve performance & UX'
+            'Led frontend migration to CDN to improve performance & UX',
+            'Automated release process and beta deployment for QA'
           ]
         },
         {
