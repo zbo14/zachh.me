@@ -48,7 +48,7 @@ module.exports = {
     Post: '/blog/:title'
   },
 
-  titleTemplate: 'Zach Balder ~ %s',
+  titleTemplate: '%s ~',
 
   transformers: {
     remark: {

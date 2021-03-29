@@ -46,7 +46,7 @@
         </ul>
       </div>
     </div>
-    <button class="flex mt-8 my-auto text-black text-xs sm:text-sm" @click="print">
+    <button class="mt-8 my-auto hidden sm:flex text-black text-xs sm:text-sm" @click="print">
       <p class="no-print">Print this document</p>
       <i class="animate-bounce no-print ml-2 ri-printer-fill"/>
     </button>
@@ -101,7 +101,6 @@ export default {
 
         AWS: [
           'CloudFront',
-          'CloudWatch',
           'EC2',
           'ELB/ALB',
           'Lambda',
@@ -153,8 +152,8 @@ export default {
           ],
 
           actions: [
-            'Contributed code and PR review on main product application',
-            'Introduced Slack webhooks to lower incident response times',
+            'Contributed code and PR review on spatial video-chat app',
+            'Introduced Slack webhooks to help with incident response',
             'Secured cloud resources with VPN in preparation for audit',
             'Led frontend migration to CDN to improve performance & UX',
             'Automated release process and beta deployment for QA'
@@ -176,7 +175,7 @@ export default {
 
           actions: [
             'Contributed code and PR review on several projects',
-            'Built library to make symmetric encryption easier for team',
+            'Built library to make encryption easier for team',
             'Created SNMP service to configure field hardware',
             'Wrote full-coverage tests and made infra design decisions'
           ]

@@ -1,27 +1,28 @@
 <template>
-  <div class="bg-indigo-100 font-custom">
-    <div class="max-w-screen-md mx-auto flex flex-col min-h-screen px-2 sm:px-0 text-sm sm:text-base">
-      <header class="h-10 my-4 sm:my-8">
-        <nav class="nav">
-          <div class="flex justify-between w-3/4">
-            <g-link v-for="(page, index) in pages" class="hidden sm:inline-flex text-black" :to="page.path" :key="index">
-              <p class="pr-0.5">{{ page.text }}</p><i :class="`ml-1 ri-${page.icon}-fill`" />
-            </g-link>
-            <div v-click-outside="() => { showMenu = false }" class="sm:hidden inline-block right-0 text-left">
-              <div class="absolute inset-y-1 right-1">
-                <button @click="showMenu = !showMenu" type="button" class="rounded-md shadow-sm px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-                  <i class="ri-menu-fill" />
-                </button>
-              </div>
-              <div v-if="showMenu" class="origin-top-right absolute right-1 mt-6 bg-indigo-200 rounded-md ring-1 ring-black ring-opacity-5 divide-y divide-blue-100" role="menu" aria-orientation="vertical">
-                <g-link v-for="(page, index) in pages" class="flex px-4 py-2 mr-4 text-black" :to="page.path" :key="index">
-                  <i :class="`mr-2 ri-${page.icon}-fill`" /><p class="pr-0.5">{{ page.text }}</p>
-                </g-link>
-              </div>
-            </div>
+  <div class="bg-indigo-100 font-custom text-sm sm:text-base">
+    <header class="flex h-8 sm:h-10 my-2 sm:my-8">
+      <nav :class="{ 'scrolled': !topOfPage }" class="nav fixed bg-indigo-100 top-0 py-6 flex animated z-10 w-full">
+        <div class="flex justify-between ml-12 w-1/2">
+          <g-link v-for="(page, index) in pages" class="hidden sm:inline-flex text-black" :to="page.path" :key="index">
+            <p class="pr-0.5">{{ page.text }}</p><i :class="`ml-1 ri-${page.icon}-fill`" />
+          </g-link>
+        </div>
+        <div v-click-outside="() => { showMenu = false }" class="sm:hidden inline-block right-0 text-left">
+          <div class="absolute inset-y-1 right-1">
+            <button @click="showMenu = !showMenu" type="button" class="rounded-md shadow-sm px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+              <i class="ri-menu-fill" />
+            </button>
           </div>
-        </nav>
-      </header>
+          <div v-if="showMenu" class="origin-top-right absolute right-1 mt-6 bg-indigo-200 rounded-md ring-1 ring-black ring-opacity-5 divide-y divide-blue-100" role="menu" aria-orientation="vertical">
+            <g-link v-for="(page, index) in pages" class="flex px-4 py-2 mr-4 text-black" :to="page.path" :key="index">
+              <i :class="`mr-2 ri-${page.icon}-fill`" />
+              <p class="pr-0.5">{{ page.text }}</p>
+            </g-link>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <div class="max-w-screen-md mx-auto flex flex-col min-h-screen px-2 sm:px-0">
       <main class="mb-auto">
         <slot/>
       </main>
@@ -97,11 +98,26 @@ export default {
         }
       ],
 
-      showMenu: false
+      showMenu: false,
+      topOfPage: true
     }
   },
 
+  beforeMount () {
+    window.addEventListener('scroll', this.handleScroll)
+  },
+
   methods: {
+    handleScroll () {
+      if (window.pageYOffset > 0) {
+        if (this.topOfPage) {
+          this.topOfPage = false
+        }
+      } else if (!this.topOfPage) {
+        this.topOfPage = true
+      }
+    },
+
     hideMenu () {
       this.showMenu = false
     }
