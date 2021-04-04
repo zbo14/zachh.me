@@ -1,7 +1,7 @@
 <template>
   <div class="bg-indigo-100 font-custom text-sm sm:text-base">
-    <header class="flex h-8 sm:h-10 my-2 sm:my-8">
-      <nav :class="{ 'scrolled': !topOfPage }" class="nav fixed bg-indigo-100 top-0 py-6 flex animated z-10 w-full">
+    <header class="flex h-10 sm:h-2 my-2 sm:my-8">
+      <nav :class="{ 'scrolled': !topOfPage }" class="nav fixed bg-indigo-100 top-0 py-6 sm:py-4 flex animated z-10 w-full">
         <div class="flex justify-between ml-12 w-1/2">
           <g-link v-for="(page, index) in pages" class="hidden sm:inline-flex text-black" :to="page.path" :key="index">
             <p class="pr-0.5">{{ page.text }}</p><i :class="`ml-1 ri-${page.icon}-fill`" />

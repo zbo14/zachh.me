@@ -34,13 +34,10 @@ This is where local port forwarding comes in. The laptop authenticates with the 
     subgraph laptop
     PORT2-->|3|EPORT
     LPORT-. 4 .-> FPORT
-    style cloud fill:gray,stroke:gray
-    style rpi fill:gray,stroke:gray
-    style laptop fill:gray,stroke:gray
     style EPORT stroke-width:4px
-    linkStyle default stroke-width:2px,fill:none,stroke:#e6e6e6
-    linkStyle 1 stroke-width:2px,fill:none,stroke:#e6e6e6,stroke-dasharray:3
-    linkStyle 3 stroke-width:2px,fill:none,stroke:#e6e6e6,stroke-dasharray:3
+    linkStyle default stroke-width:2px,fill:none
+    linkStyle 1 stroke-width:2px,fill:none,stroke-dasharray:3
+    linkStyle 3 stroke-width:2px,fill:none,stroke-dasharray:3
     end
 ```
 <br>

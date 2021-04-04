@@ -7,7 +7,7 @@ date: 2019-11-13
 
 <br>
 
-I recently started working on a [project](/projects/diy-vpn/) to set up and run my own VPN using [OpenVPN](https://openvpn.net/) and [easy-rsa](https://github.com/OpenVPN/easy-rsa). Someone at work suggested I check out [WireGuard](https://www.wireguard.com/), a more modern and performant VPN that's open-source. Still under development at the time of writing, WireGuard is already supported by several major VPN providers. I decided to bootstrap my own WireGuard VPN and compare it with the OpenVPN solution.
+I recently started working on a project to set up and run my own VPN using [OpenVPN](https://openvpn.net/) and [easy-rsa](https://github.com/OpenVPN/easy-rsa). Someone at work suggested I check out [WireGuard](https://www.wireguard.com/), a more modern and performant VPN that's open-source. Still under development at the time of writing, WireGuard is already supported by several major VPN providers. I decided to bootstrap my own WireGuard VPN and compare it with the OpenVPN solution.
 
 <br>
 

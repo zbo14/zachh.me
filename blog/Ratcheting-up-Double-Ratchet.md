@@ -14,9 +14,11 @@ Signal (or more specifically the [Signal Protocol](https://en.wikipedia.org/wiki
 
 <br>
 
-  * End-to-end encryption
-  * Forward security
-  * Break-in recovery
+<ul class="list-decimal list-inside">
+  <li class="ml-4">End-to-end encryption</li>
+  <li class="ml-4">Forward security</li>
+  <li class="ml-4">Break-in recovery</li>
+</ul>
 
 <br>
 
@@ -76,4 +78,4 @@ Besides implementing Double Ratchet, the package includes a [server component](h
 
 <br>
 
-I added the [project](/projects/triple-double/) to my protfolio page. You can also check it out on [GitHub](https://github.com/zbo14/triple-double)!
+Check out the project on [GitHub](https://github.com/zbo14/triple-double)!

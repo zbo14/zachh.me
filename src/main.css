@@ -32,6 +32,15 @@
       size: auto;
     }
   }
+
+  /* Prevent text cutoff in mermaid.js figures */
+  .label foreignObject {
+    overflow: visible;
+  }
+
+  pre {
+    @apply whitespace-pre overflow-x-auto;
+  }
 }
 
 @tailwind components;

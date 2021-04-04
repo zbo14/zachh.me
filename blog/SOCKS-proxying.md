@@ -16,7 +16,7 @@ Let's run `tcpdump` in terminal to get a look at the HTTPS traffic:
 ```
 $ sudo tcpdump -nnSX dst port 443
 
-13:52:21.530207 IP 10.12.117.160.50937 > 151.101.249.140.443: Flags [P.], seq 3497648863:3497648989, ack 2992415932, win 15996, options [nop,nop,TS val 828290264 ecr 2300058011], length 126
+13:52:21.530207 IP 10.12.117.160.50937 > 151.101.249.140.443: ...
 	0x0000:  18e8 2941 2140 8c85 903b c1d2 0800 4500  ..)A!@...;....E.
 	0x0010:  00b2 0000 4000 4006 29a8 0a0c 75a0 9765  ....@.@.)...u..e
 	0x0020:  f98c c6f9 01bb d079 e2df b25c a4bc 8018  .......y...\....
@@ -65,7 +65,7 @@ There's another thing we should consider. Your browser makes DNS requests to res
 ```
 $ sudo tcpdump -nnSX dst port 53
 
-16:23:46.087037 IP 10.12.117.160.65320 > 10.12.115.1.53: 56794+ A? foobar.com. (28)
+16:23:46.087037 IP 10.12.117.160.65320 > 10.12.115.1.53: 56794+ A? foobar.com
 	0x0000:  18e8 2941 2140 8c85 903b c1d2 0800 4500  ..)A!@...;....E.
 	0x0010:  0038 d646 0000 ff11 e8b4 0a0c 75a0 0a0c  .8.F........u...
 	0x0020:  7301 ff28 0035 0024 0a07 ddda 0100 0001  s..(.5.$........
@@ -95,12 +95,9 @@ How can we prevent the coffee shop Wi-Fi snooper from seeing the destination add
     subgraph laptop
     * -->|1|EPORT
     LPORT-. 3 .-> 443
-    style reddit fill:gray,stroke:gray
-    style cloud fill:gray,stroke:gray
-    style laptop fill:gray,stroke:gray
 		style EPORT stroke-width:4px
-    linkStyle default stroke-width:2px,fill:none,stroke:#e6e6e6
-    linkStyle 2 stroke-width:2px,fill:none,stroke:#e6e6e6,stroke-dasharray:3
+    linkStyle default stroke-width:2px,fill:none
+    linkStyle 2 stroke-width:2px,fill:none,stroke-dasharray:3
     end
 ```
 
@@ -181,7 +178,7 @@ Before we finish up, let's make sure our web traffic *and* DNS requests are sent
 ```
 $ sudo tcpdump -nnSX dst port <PORT>
 
-13:10:02.703097 IP 192.168.1.16.57076 > <ADDRESS>.<PORT>: Flags [P.], seq 1414475942:1414476174, ack 2549269707, win 18494, options [nop,nop,TS val 3087440208 ecr 2665010525], length 232
+13:10:02.703097 IP 192.168.1.16.57076 > <ADDRESS>.<PORT>: ...
 	0x0000:  4510 011c 56d8 4000 4006 e87f c0a8 0110  E...V.@.@.......
 	0x0010:  0354 3568 def4 45e8 544f 30a6 97f2 c4cb  .T5h..E.TO0.....
 	0x0020:  8018 483e be57 0000 0101 080a b806 9950  ..H>.W.........P

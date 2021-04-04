@@ -1,11 +1,13 @@
 <template>
   <Layout>
-    <div>
+    <div class="text-xs sm:text-base">
       <h1 class="p-1">{{ $page.post.title }}</h1>
       <span class="font-light italic p-1">{{ $page.post.date }}</span>
       <div class="p-1" v-html="$page.post.content" />
-      <div class="flex my-8">
-        <g-link class="text-black" to="/blog"><< back to blog</g-link>
+      <div class="flex mt-8 sm:mb-8">
+        <div>
+          <g-link class="text-black hover:text-shadow-yellow" to="/blog"><< back to blog</g-link>
+        </div>
       </div>
     </div>
   </Layout>

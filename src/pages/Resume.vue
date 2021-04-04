@@ -46,7 +46,7 @@
         </ul>
       </div>
     </div>
-    <button class="mt-8 my-auto hidden sm:flex text-black text-xs sm:text-sm" @click="print">
+    <button class="hover:text-shadow-yellow mt-8 my-auto hidden sm:flex text-black text-xs sm:text-sm" @click="print">
       <p class="no-print">Print this document</p>
       <i class="animate-bounce no-print ml-2 ri-printer-fill"/>
     </button>
