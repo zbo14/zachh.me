@@ -1,1 +1,3 @@
-# personal-site-v2
+# zachh.me
+
+my personal site

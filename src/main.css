@@ -1,6 +1,10 @@
 @tailwind base;
 
 @layer base {
+  body {
+    @apply bg-indigo-100
+  }
+
   h1 {
     @apply font-semibold text-lg sm:text-2xl;
   }
