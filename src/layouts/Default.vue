@@ -110,11 +110,15 @@ export default {
 
   methods: {
     atBottomOfPage () {
-      const docElem = window.document.documentElement
-      const offset = docElem.scrollTop + window.innerHeight
-      const height = docElem.offsetHeight
+      try {
+        const docElem = document.documentElement
+        const offset = docElem.scrollTop + window.innerHeight
+        const height = docElem.offsetHeight
 
-      return offset >= height
+        return offset >= height
+      } catch {
+        return false
+      }
     },
 
     handleScroll () {
