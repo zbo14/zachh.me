@@ -21,6 +21,10 @@
     @apply no-underline text-shadow-pink
   }
 
+  div.scrolled {
+    @apply shadow;
+  }
+
   nav.scrolled {
     @apply shadow;
     border-bottom: 0px;

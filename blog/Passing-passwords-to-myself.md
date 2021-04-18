@@ -1,5 +1,5 @@
 ---
-"slug": "passing-passwords-to-myself"
+slug: "passing-passwords-to-myself"
 title: "Passing passwords to myself"
 description: ""
 date: 2020-02-10

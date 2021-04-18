@@ -1,5 +1,12 @@
 module.exports = {
-  purge: [],
+  plugins: [
+    require('tailwindcss-textshadow')
+  ],
+
+  purge: [
+    './src/**/*.html',
+    './src/**/*.vue'
+  ],
 
   theme: {
     fontFamily: {
@@ -14,9 +21,5 @@ module.exports = {
     }
   },
 
-  variants: {},
-
-  plugins: [
-    require('tailwindcss-textshadow')
-  ]
+  variants: {}
 }

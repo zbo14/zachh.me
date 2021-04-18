@@ -5,7 +5,7 @@
       <h1 class="mx-4 my-auto">Hey! I'm Zach Balder</h1>
     </div>
     <p class="my-4">
-      I'm a developer of open-source software and senior software engineer at <g-link href="https://gatherly.io">Gatherly</g-link>.
+      I'm a developer of open-source software, ex-software engineer at <g-link href="https://starry.com">Starry</g-link>, currently senior software engineer at <g-link href="https://gatherly.io">Gatherly</g-link>.
     </p>
   </Layout>
 </template>

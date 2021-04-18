@@ -1,7 +1,7 @@
 <template>
   <div class="font-custom text-sm sm:text-base">
     <header class="flex h-10 sm:h-2 my-2 sm:my-8">
-      <nav :class="{ 'scrolled': !topOfPage }" class="nav fixed bg-indigo-100 top-0 py-6 sm:py-4 flex animated z-10 w-full">
+      <nav :class="{ 'scrolled': !topOfPage }" class="fixed bg-indigo-100 top-0 py-6 sm:py-4 flex w-full z-10">
         <div class="flex justify-between ml-12 w-1/2">
           <g-link v-for="(page, index) in pages" class="hidden sm:inline-flex text-black" :to="page.path" :key="index">
             <p class="pr-0.5">{{ page.text }}</p><i :class="`ml-1 ri-${page.icon}-fill`" />
@@ -22,24 +22,24 @@
         </div>
       </nav>
     </header>
-    <div class="max-w-screen-md mx-auto flex flex-col min-h-screen px-2 sm:px-0">
+    <div class="max-w-screen-md mx-auto flex flex-col px-2 sm:px-0">
       <main class="mb-auto">
         <slot/>
       </main>
-      <footer class="h-10 mt-8">
-        <div class="flex opacity-75">
-          <div class="inline-flex mr-6 my-auto">
-            <p class="mr-1 my-auto text-sm">Zach Balder</p>
-            <i class="my-auto ri-copyright-line ri-xs"/>
-          </div>
-          <div class="ml-4" v-for="profile in profiles">
-            <g-link class="hover:no-underline" :href="profile.link">
-              <i :class="profile.class + ' text-black'"/>
-            </g-link>
-          </div>
-        </div>
-      </footer>
     </div>
+    <footer class="h-10 mt-8 w-full">
+      <div :class="{ 'scrolled': !bottomOfPage }" class="bottom-0 bg-indigo-100 fixed flex justify-center py-1 w-full z-10">
+        <p class="mr-1 my-auto text-sm">Zach Balder</p>
+        <i class="mr-8 my-auto ri-copyright-line ri-xs"/>
+        <g-link
+          class="hover:no-underline mr-3 my-auto"
+          v-for="(profile, i) in profiles"
+          :href="profile.link"
+          :key="i">
+          <i :class="profile.class + ' text-black'"/>
+        </g-link>
+      </div>
+    </footer>
   </div>
 </template>
 
@@ -98,28 +98,28 @@ export default {
         }
       ],
 
-      showMenu: false,
-      topOfPage: true
+      bottomOfPage: this.atBottomOfPage(),
+      topOfPage: true,
+      showMenu: false
     }
   },
 
   beforeMount () {
-    window.addEventListener('scroll', this.handleScroll)
+    window.addEventListener('scroll', this.handleScroll.bind(this))
   },
 
   methods: {
-    handleScroll () {
-      if (window.pageYOffset > 0) {
-        if (this.topOfPage) {
-          this.topOfPage = false
-        }
-      } else if (!this.topOfPage) {
-        this.topOfPage = true
-      }
+    atBottomOfPage () {
+      const docElem = document.documentElement
+      const offset = docElem.scrollTop + window.innerHeight
+      const height = docElem.offsetHeight
+
+      return offset >= height
     },
 
-    hideMenu () {
-      this.showMenu = false
+    handleScroll () {
+      this.bottomOfPage = this.atBottomOfPage()
+      this.topOfPage = window.pageYOffset <= 0
     }
   }
 }

@@ -1,5 +1,5 @@
 ---
-"slug": "ratcheting-up-double-ratchet"
+slug: "ratcheting-up-double-ratchet"
 title: "Ratcheting up Double Ratchet"
 description: ""
 date: 2021-01-10
