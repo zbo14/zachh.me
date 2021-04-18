@@ -110,7 +110,7 @@ export default {
 
   methods: {
     atBottomOfPage () {
-      const docElem = document.documentElement
+      const docElem = window.document.documentElement
       const offset = docElem.scrollTop + window.innerHeight
       const height = docElem.offsetHeight
 
