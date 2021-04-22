@@ -23,20 +23,20 @@
       </nav>
     </header>
     <div class="max-w-screen-md mx-auto flex flex-col px-2 sm:px-0">
-      <main class="mb-auto">
+      <main class="mb-auto mt-2 print sm:mt-4">
         <slot/>
       </main>
     </div>
     <footer class="h-10 mt-8 w-full">
       <div :class="{ 'scrolled': !bottomOfPage }" class="bottom-0 bg-indigo-100 fixed flex justify-center py-1 w-full z-10">
-        <p class="mr-1 my-auto text-sm">Zach Balder</p>
-        <i class="mr-8 my-auto ri-copyright-line ri-xs"/>
+        <p class="mr-1 my-auto opacity-75 text-sm">Zach Balder</p>
+        <i class="mr-8 my-auto opacity-75 ri-copyright-line ri-xs"/>
         <g-link
           class="hover:no-underline mr-3 my-auto"
           v-for="(profile, i) in profiles"
           :href="profile.link"
           :key="i">
-          <i :class="profile.class + ' text-black'"/>
+          <i :class="profile.class + ' opacity-75 text-black'"/>
         </g-link>
       </div>
     </footer>

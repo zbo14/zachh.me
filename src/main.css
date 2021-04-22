@@ -31,13 +31,16 @@
   }
 
   @media print {
-    header, footer, .no-print {
-      display: none;
+    * {
+     visibility: hidden;
+    }
+
+    main * {
+      visibility: visible;
     }
 
     @page {
-      margin: 20mm;
-      size: auto;
+      margin-top: -24px;
     }
   }
 
