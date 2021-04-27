@@ -1,9 +1,12 @@
 <template>
   <Layout>
-    <p class="terminal text-lg">
+    <p id="terminal-1" class="terminal text-lg">
       zach@home:~$
     </p>
-    <div class="whoami">
+    <p id="terminal-2" class="invisible terminal text-lg">
+      zach@home:~$
+    </p>
+    <div id="whoami" class="invisible">
       <div class="flex my-8">
         <img class="object-scale-down h-24 rounded-full" src="../../static/images/me.jpeg"/>
         <h1 class="mx-4 my-auto">Hi, my name's Zach!</h1>
@@ -22,107 +25,59 @@
 
 <script>
 export default {
+  methods: {
+    wait (ms) {
+      return new Promise(resolve => setTimeout(resolve, ms))
+    }
+  },
+
+  async mounted () {
+    const terminal1 = document.getElementById('terminal-1')
+    const terminal2 = document.getElementById('terminal-2')
+    const whoami = document.getElementById('whoami')
+
+    const sequence1 = [
+      '_',
+      '',
+      '_',
+      'w_',
+      'wh_',
+      'who_',
+      'whoa_',
+      'whoam_',
+      'whoami_'
+    ]
+
+    for (let i = 0; i < sequence1.length; i++) {
+      terminal1.textContent = 'zach@home:~$ ' + sequence1[i]
+      await this.wait(Math.random() * 100 + 200)
+    }
+
+    const sequence2 = [
+      'whoami',
+      'whoami_',
+      'whoami'
+    ]
+
+    for (let i = 0; i < sequence2.length; i++) {
+      terminal1.textContent = 'zach@home:~$ ' + sequence2[i]
+      await this.wait(500)
+    }
+
+    terminal2.textContent += '_'
+    terminal2.classList.remove('invisible')
+
+    setInterval(() => {
+      terminal2.textContent = terminal2.textContent.endsWith('_')
+        ? terminal2.textContent.slice(0, -1)
+        : terminal2.textContent + '_'
+    }, 500)
+
+    whoami.classList.remove('invisible')
+  },
+
   metaInfo: {
     title: 'Home'
   }
 }
 </script>
-
-<style>
-.terminal:after {
-  content:"_";
-  opacity: 0;
-  animation: typing 3s step-end forwards;
-  animation-iteration-count: 1;
-}
-
-.whoami div:nth-child(1) {
-  opacity: 0;
-  animation: show 3s ease-in forwards;
-  animation-iteration-count: 1;
-}
-
-.whoami p:nth-child(2) {
-  opacity: 0;
-  animation: show 3s ease-in forwards;
-  animation-iteration-count: 1;
-  animation-delay: 0.4s;
-}
-
-.whoami p:nth-child(3) {
-  opacity: 0;
-  animation: show 3s ease-in forwards;
-  animation-iteration-count: 1;
-  animation-delay: 0.8s;
-}
-
-.whoami p:nth-child(4) {
-  opacity: 0;
-  animation: show 3s ease-in forwards;
-  animation-iteration-count: 1;
-  animation-delay: 1.2s;
-}
-
-@keyframes show {
-  75% {
-    opacity: 0;
-  }
-
-  80% {
-    opacity: 1;
-  }
-
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes typing {
-  0% {
-    opacity: 1;
-  }
-
-  20% {
-    opacity: 0;
-  }
-
-  40% {
-    content:"_";
-    opacity: 1;
-  }
-
-  45% {
-    content: "w_";
-  }
-
-  50% {
-    content: "wh_";
-  }
-
-  55% {
-    content: "who_";
-  }
-
-  60% {
-    content: "whoa_";
-  }
-
-  65% {
-    content: "whoam_";
-  }
-
-  70% {
-    content: "whoami_";
-  }
-
-  80% {
-    content: "whoami";
-    opacity: 1;
-  }
-
-  100% {
-    content: "whoami";
-    opacity: 1;
-  }
-}
-</style>
