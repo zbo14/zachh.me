@@ -50,7 +50,7 @@ export default {
 
     for (let i = 0; i < sequence1.length; i++) {
       terminal1.textContent = 'zach@home:~$ ' + sequence1[i]
-      await this.wait(Math.random() * 100 + 200)
+      await this.wait(Math.random() * 100 + 180)
     }
 
     const sequence2 = [
@@ -61,7 +61,7 @@ export default {
 
     for (let i = 0; i < sequence2.length; i++) {
       terminal1.textContent = 'zach@home:~$ ' + sequence2[i]
-      await this.wait(500)
+      await this.wait(400)
     }
 
     terminal2.textContent += '_'

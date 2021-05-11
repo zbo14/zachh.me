@@ -2,9 +2,14 @@
   <div class="font-custom text-sm sm:text-base">
     <header class="flex h-10 sm:h-2 my-2 sm:my-8">
       <nav :class="{ 'scrolled': !topOfPage }" class="fixed bg-indigo-100 top-0 py-6 sm:py-4 flex w-full z-10">
-        <div class="flex justify-between ml-12 w-1/2">
+        <div class="flex justify-between ml-12 my-auto w-1/2">
           <g-link v-for="(page, index) in pages" class="hidden sm:inline-flex text-black" :to="page.path" :key="index">
             <p class="pr-0.5">{{ page.text }}</p><i :class="`ml-1 ri-${page.icon}-fill`" />
+          </g-link>
+        </div>
+        <div class="flex justify-end mr-8 my-auto w-1/2">
+          <g-link class="hidden sm:inline-flex text-black" to="https://github.com/zbo14/zachh.me/fork">
+            <p class="pr-0.5">Fork me!</p><i class="ml-1 ri-git-branch-fill" />
           </g-link>
         </div>
         <div v-click-outside="() => { showMenu = false }" class="sm:hidden inline-block right-0 text-left">

@@ -153,10 +153,11 @@ export default {
 
           actions: [
             'Contributed code and PR review on spatial video-chat app',
-            'Introduced Slack webhooks to help with incident response',
+            'Added logging via Slack webhooks to lower response times',
             'Secured cloud resources with VPN in preparation for audit',
             'Led frontend migration to CDN to improve performance & UX',
-            'Automated release process and beta deployment for QA'
+            'Automated release process and featured branch deployment',
+            'Constructed staging environment to QA before production'
           ]
         },
         {
