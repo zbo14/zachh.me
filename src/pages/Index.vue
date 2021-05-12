@@ -11,14 +11,24 @@
         <img class="object-scale-down h-24 rounded-full" src="../../static/images/me.jpeg"/>
         <h1 class="mx-4 my-auto">Hi, my name's Zach!</h1>
       </div>
-      <p class="my-8 text-lg">
-        > I'm an open-source developer
-      <p class="my-8 text-lg">
-        > Former engineer at <g-link href="https://starry.com">Starry</g-link>
-      </p>
-      <p class="my-8 text-lg">
-        > Currently building at <g-link href="https://gatherly.io">Gatherly</g-link>
-      </p>
+      <div class="flex my-8">
+        <i class="mr-2 my-auto ri-terminal-fill"></i>
+        <p class="my-auto text-lg">
+          I'm an open-source developer
+        </p>
+      </div>
+      <div class="flex my-8">
+        <i class="mr-2 my-auto ri-terminal-fill"></i>
+        <p class="my-auto text-lg">
+          Former engineer at <g-link href="https://starry.com">Starry</g-link>
+        </p>
+      </div>
+      <div class="flex my-8">
+        <i class="mr-2 my-auto ri-terminal-fill"></i>
+        <p class="my-auto text-lg">
+          Currently building at <g-link href="https://gatherly.io">Gatherly</g-link>
+        </p>
+      </div>
     </div>
   </Layout>
 </template>

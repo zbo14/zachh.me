@@ -10,7 +10,7 @@ I thought it was about time to write about my little corner of the internet :)
 
 <br>
 
-My first site, [zbo14.github.io](https://zbo14.github.io), is a [Jekyll](https://jekyllrb.com/) blog deployed via [GitHub pages](https://pages.github.com/). It was easy to set up and update, but it didn't look great on mobile and I didn't implement a responsive design from the outset. Also, I wasn't a huge fan of [Liquid](https://github.com/Shopify/liquid/wiki) and would've preferred to write code in the vein of a modern JS framework (e.g. React, Vue).
+My first site, [zbo14.github.io](https://zbo14.github.io), is a [Jekyll](https://jekyllrb.com/) blog deployed on [GitHub pages](https://pages.github.com/). It was easy to set up and update, but it didn't look great on mobile and I didn't implement a responsive design from the outset. Also, I wasn't a huge fan of [Liquid](https://github.com/Shopify/liquid/wiki) and would've preferred to write code in the vein of a modern JS framework (e.g. React, Vue).
 
 <br>
 

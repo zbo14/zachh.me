@@ -7,5 +7,6 @@ my lil corner of the Internet :)
 ## Built with
 
 * [Gridsome](https://gridsome.org/)
-* [Remix Icon](https://remixicon.com/)
 * [Tailwind CSS](https://tailwindcss.com/)
+* [Remix Icon](https://remixicon.com/)
+* [Fathom Analytics](https://usefathom.com/)
