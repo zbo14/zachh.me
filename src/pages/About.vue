@@ -1,6 +1,6 @@
 <template>
   <Layout>
-    <p><b>Hi, my name's Zach!</b> I'm a software engineer and occasional bug-bounty hunter interested in all things web. I love to write backend code and design distributed applications. Typically, coffee and beer are the bookends to my day. In my free time, I like to sing and play keyboard. Every once in a blue moon, I'll scrape the rust off my saxophone.</p>
+    <p><b>Hi, my name's Zach!</b> I'm a software engineer and <span class="line-through">occasional</span> former bug-bounty hunter interested in all things web. I love to write backend code and design distributed applications. Typically, coffee and beer are the bookends to my day. In my free time, I like to sing and play keyboard. Every once in a blue moon, I'll scrape the rust off my saxophone.</p>
     <h1 class="font-heading mt-8">My path</h1>
     <div v-for="(step, idx) in myPath" :key="idx">
       <div class="inline-flex">
