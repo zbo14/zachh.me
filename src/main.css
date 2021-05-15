@@ -21,6 +21,10 @@
     @apply no-underline text-shadow-pink
   }
 
+  div.post > * {
+    @apply mt-4
+  }
+
   div.scrolled {
     @apply shadow;
   }
@@ -51,6 +55,14 @@
 
   pre {
     @apply whitespace-pre overflow-x-auto;
+  }
+
+  blockquote {
+    @apply pl-4 mx-2 mb-4 py-2 border-l-4 border-indigo-200 italic;
+  }
+
+  blockquote > p {
+    @apply mb-0;
   }
 }
 

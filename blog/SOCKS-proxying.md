@@ -5,11 +5,7 @@ description: ""
 date: 2019-10-11
 ---
 
-<br>
-
 Suppose you're at a coffee shop with Wi-Fi and someone is watching your traffic. What do they see when you navigate to "reddit.com" in your browser?
-
-<br>
 
 Let's run `tcpdump` in terminal to get a look at the HTTPS traffic:
 
@@ -31,11 +27,7 @@ $ sudo tcpdump -nnSX dst port 443
 	0x00b0:  3c85 3af4 fe73 47bd 2b78 5bfa 3181 ec3d  <.:..sG.+x[.1..=
 ```
 
-<br>
-
 On the first line, we see two IP addresses: "10.12.117.160" and "151.101.249.140". The former is my laptop's address on the local network, which I verified with `ifconfig`. The latter is an IP address for reddit (or rather Fastly, the content delivery network (CDN) reddit uses). We can tell it's HTTPS traffic (read: encrypted) since it's destined for reserved port 443. Below, we see this garbled mess:
-
-<br>
 
 ```
 ..)A!@...;....E.
@@ -52,15 +44,9 @@ On the first line, we see two IP addresses: "10.12.117.160" and "151.101.249.140
 <.:..sG.+x[.1..=
 ```
 
-<br>
-
 This is why HTTPS (HTTP over TLS) is so important and why you should be wary when visiting HTTP sites (read: unencrypted). TLS encrypts your traffic and prevents others on the network from seeing the cleartext data (e.g. your passwords). However, they *can* see the IP addresses your traffic is destined for. This by itself might seem like an invasion of privacy. If you're using a virtual private network (VPN), they wouldn't see the destination addresses; they'd see packets destined for the VPN. It's possible the VPN provider is watching where your packets are going. So are we just kicking the can down the road? Yes, but we'd hope the VPN provider is less inclined to watch our traffic/care where packets are going.
 
-<br>
-
 There's another thing we should consider. Your browser makes DNS requests to resolve hostnames like "reddit.com" to IP addresses. These requests aren't encrypted unless you're using DNS-over-HTTPS. Let's take a look at DNS traffic when we visit "foobar.com" in our browser.
-
-<br>
 
 ```
 $ sudo tcpdump -nnSX dst port 53
@@ -73,15 +59,9 @@ $ sudo tcpdump -nnSX dst port 53
 	0x0040:  6d00 0001 0001
 ```
 
-<br>
-
 Once again, "10.12.117.160" is my laptop's address. The "10.12.115.1" address corresponds to the DNS server on the local network, and we're asking it to resolve "foobar.com". If your web traffic is going through a VPN but your cleartext DNS requests aren't, someone on the network could monitor them to see what sites you're visiting.
 
-<br>
-
 How can we prevent the coffee shop Wi-Fi snooper from seeing the destination addresses of our packets and the hostnames we're visiting? We could pay to use a VPN service or run our own VPN, but this is a lot of work. Another option, which I'll discuss in greater detail, is running a SOCKS v5 proxy on our local machine that tunnels our web traffic and DNS requests over SSH (read: encrypted) to a daemon running in the cloud. From the cloud, the DNS requests are sent unencrypted to some DNS server. Once again, kicking the can down the road but I'd like to think we're kicking it to a part of the road where fewer people are watching.
-
-<br>
 
 ```mermaid
   graph LR
@@ -101,79 +81,47 @@ How can we prevent the coffee shop Wi-Fi snooper from seeing the destination add
     end
 ```
 
-<br>
-
 Alright, let's get into it. Install [socksproxy](https://github.com/zbo14/socksproxy) on your local machine. Since `socksproxy`'s a systemd service, it runs on Linux. At the time of writing, I've tested it on Ubuntu and Raspbian.
 
-<br>
-
 After that, install [socksd](https://github.com/zbo14/socksd) on a cloud instance (e.g. AWS, Digital Ocean). `socksd` is a systemd service too. At the time of writing, I've only tested it on Ubuntu. You'll need to authorize `socksproxy` by copy-and-pasting `socksproxy`'s public key `/root/.ssh/socksproxy.pub` on your local machine to `/home/socksproxy/.ssh/authorized_keys` on the cloud instance. Now we can start `socksd`!
-
-<br>
 
 ```
 $ sudo systemctl start socksd
 ```
 
-<br>
-
 Let's make sure it's up and running.
-
-<br>
 
 ```
 $ sudo systemctl status socksd
 ```
 
-<br>
-
 On your local machine, configure `socksproxy` to communicate with `socksd`. You'll need to change `HOST` in `/etc/socksproxy/socksproxy.conf` to the address or hostname of your cloud instance. Then you can start `socksproxy`!
-
-<br>
 
 ```
 $ sudo systemctl start socksproxy
 ```
 
-<br>
-
 And let's check the status.
-
-<br>
 
 ```
 $ sudo systemctl status socksproxy
 ```
 
-<br>
-
 Hopefully that's working for you. Now we need to point our browser at `socksproxy`. I'm using Firefox but if you're using a different browser you should be able to configure a SOCKS proxy in browser or system settings. In Firefox, click the hamburger menu at the top right and then click "Preferences". Scroll down to the bottom and click "Settings" under "Network Settings". Select "Manual proxy configuration" and enter `socksproxy`'s address ("127.0.0.1") and port (default is 17897) next to "SOCKS Host". Scroll down and check "Proxy DNS when using SOCKS v5".
 
-<br>
-
 You should be good to go! If you experience problems with `socksproxy`, you can inspect the logs to help troubleshoot.
-
-<br>
 
 ```
 $ sudo journalctl -u socksproxy
 ```
 
-<br>
-
 There may be issues on the `socksd` side so you can check the logs there too.
-
-<br>
 
 ```
 $ sudo journalctl -u socksd
 ```
 
-<br>
-
 Before we finish up, let's make sure our web traffic *and* DNS requests are sent encrypted to `socksd`.
-
-<br>
 
 ```
 $ sudo tcpdump -nnSX dst port <PORT>
@@ -198,7 +146,5 @@ $ sudo tcpdump -nnSX dst port <PORT>
 	0x0100:  f380 3807 061a bf15 e847 62b1 419e e7f6  ..8......Gb.A...
 	0x0110:  c0a8 5914 2df1 e438 360d 1a6e            ..Y.-..86..n
 ```
-
-<br>
 
 For this packet capture, I was on a different network and my private address was "192.168.1.16". I was proxying traffic to a cloud instance with address `<ADDRESS>` where `socksd` was listening on port `<PORT>`. I ran `sudo tcpdump -nnSX dst port 53` in my terminal and navigated to "foobaz.com" in my browser. The DNS query didn't appear in the packet dump like it previously did with "foobar.com"! However, I saw other DNS traffic to/from the local DNS server because I only enabled the proxy in browser settings. I could've configured a SOCKS proxy in system settings, but there's no option to proxy DNS requests over SOCKS v5 that way. So we still have DNS traffic going through the local DNS server, but it looks like all web traffic and DNS requests *from the browser* are going through our proxy. That's good enough for me for now.

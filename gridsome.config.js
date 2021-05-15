@@ -36,12 +36,12 @@ module.exports = {
 
     {
       use: 'gridsome-plugin-fathom',
-        options: {
-          siteId: 'YZUZBGIG',
-          host: 'zachh.me',
-          debug: true
-        }
+      options: {
+        siteId: 'YZUZBGIG',
+        host: 'zachh.me',
+        debug: true
       }
+    }
   ],
 
   templates: {
