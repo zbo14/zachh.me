@@ -98,8 +98,8 @@ export default {
           link: 'https://twitter.com/digitalAn4log'
         },
         {
-          class: 'ri-instagram-fill',
-          link: 'https://www.instagram.com/zachbalder'
+          class: 'ri-mastodon-fill',
+          link: 'https://mastodon.zachh.me/@zach'
         }
       ],
 
