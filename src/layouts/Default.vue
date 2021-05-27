@@ -80,7 +80,7 @@ export default {
         },
         {
           icon: 'rss',
-          path: '/feed.xml',
+          path: 'https://zachh.me/feed.xml',
           text: 'RSS'
         }
       ],
