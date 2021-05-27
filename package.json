@@ -10,8 +10,8 @@
     "@gridsome/source-filesystem": "^0.6.2",
     "gridsome": "^0.7.0",
     "gridsome-plugin-fathom": "^0.0.16",
+    "gridsome-plugin-feed": "^1.0.2",
     "gridsome-plugin-remark-mermaid": "^1.0.1",
-    "gridsome-plugin-rss": "^1.2.0",
     "v-click-outside": "^3.1.2"
   },
   "devDependencies": {

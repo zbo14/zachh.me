@@ -35,27 +35,28 @@ module.exports = {
     },
 
     {
-      use: 'gridsome-plugin-rss',
+      use: 'gridsome-plugin-feed',
 
       options: {
-        contentTypeName: 'Post',
+        contentTypes: ['Post'],
 
         feedOptions: {
           title: 'Zach Balder',
-          feed_url: 'https://zachh.me/rss.xml',
-          site_url: 'https://zachh.me/'
+          description: 'My blog'
         },
 
-        feedItemOptions: node => ({
-          title: node.title,
-          description: node.description,
-          url: 'https://zachh.me/blog/' + node.slug
-        }),
+        rss: {
+          enabled: true,
+          output: '/feed.xml'
+        },
 
-        output: {
-          dir: './static',
-          name: 'rss.xml'
-        }
+        filterNodes: node => true,
+
+        nodeToFeedItem: node => ({
+          title: node.title,
+          date: node.date,
+          content: node.content
+        })
       }
     },
 
