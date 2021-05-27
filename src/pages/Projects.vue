@@ -11,7 +11,8 @@
     <p>Reading through specifications, reviewing other implementations, and building my own. These steps help cement my understanding of how a system works and why it was designed the way it was. Not too long ago, I created <g-link href="https://github.com/zbo14/triple-double">my own implementation</g-link> of the Double Ratchet and Extended Triple Diffie-Hellman Algorithms, allowing users to send encrypted messages to each other over WebSockets.</p>
     <br>
     <h2 class="italic mb-4">Want to work on something together?</h2>
-    <p>Let's talk! Feel free to reach out on social or email: zmbalder{at}gmail{dot}com.</p>
+    <p>I'm always excited for opportunities to collaborate on projects!</p>
+    <p>Feel free to reach out on social or email: zmbalder{at}gmail{dot}com.</p>
   </Layout>
 </template>
 

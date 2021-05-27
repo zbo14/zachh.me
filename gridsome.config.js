@@ -7,6 +7,7 @@ const tailwindcss = require('tailwindcss');
 
 module.exports = {
   siteName: 'Zach Balder',
+  siteUrl: 'https://zachh.me',
 
   css: {
     loaderOptions: {
