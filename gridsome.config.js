@@ -3,7 +3,8 @@
 
 // Changes here require a server restart.
 // To restart press CTRL + C in terminal and run `gridsome develop`
-const tailwindcss = require('tailwindcss');
+const marked = require('marked')
+const tailwindcss = require('tailwindcss')
 
 module.exports = {
   siteName: 'Zach Balder',
@@ -53,10 +54,11 @@ module.exports = {
 
         filterNodes: node => true,
 
+        // Workaround from https://github.com/gridsome/gridsome/issues/514#issuecomment-510481670
         nodeToFeedItem: node => ({
           title: node.title,
           date: node.date,
-          content: node.content
+          content: marked(node.content)
         })
       }
     },
