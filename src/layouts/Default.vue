@@ -6,6 +6,9 @@
           <g-link v-for="(page, index) in pages" class="hidden sm:inline-flex text-black" :to="page.path" :key="index">
             <p class="pr-0.5">{{ page.text }}</p><i :class="`ml-1 ri-${page.icon}-fill`" />
           </g-link>
+          <a class="hidden sm:inline-flex text-black" href="https://zachh.me/feed.xml">
+            <p class="pr-0.5">RSS</p><i class="ml-1 ri-rss-fill" />
+          </a>
         </div>
         <div class="flex justify-end mr-8 my-auto w-1/2">
           <g-link class="hidden sm:inline-flex text-black" to="https://github.com/zbo14/zachh.me/fork">
@@ -23,6 +26,10 @@
               <i :class="`mr-2 ri-${page.icon}-fill`" />
               <p class="pr-0.5">{{ page.text }}</p>
             </g-link>
+            <a class="flex px-4 py-2 mr-4 text-black" href="https://zachh.me/feed.xml">
+              <i class="mr-2 ri-rss-fill" />
+              <p class="pr-0.5">RSS</p>
+            </a>
           </div>
         </div>
       </nav>
@@ -77,11 +84,6 @@ export default {
           icon: 'file-paper-2',
           path: '/resume/',
           text: 'Résumé'
-        },
-        {
-          icon: 'rss',
-          path: 'https://zachh.me/feed.xml',
-          text: 'RSS'
         }
       ],
 
