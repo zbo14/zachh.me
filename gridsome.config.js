@@ -35,6 +35,31 @@ module.exports = {
     },
 
     {
+      use: 'gridsome-plugin-rss',
+
+      options: {
+        contentTypeName: 'Post',
+
+        feedOptions: {
+          title: 'Zach Balder',
+          feed_url: 'https://zachh.me/rss.xml',
+          site_url: 'https://zachh.me/'
+        },
+
+        feedItemOptions: node => ({
+          title: node.title,
+          description: node.description,
+          url: 'https://zachh.me/blog/' + node.slug
+        }),
+
+        output: {
+          dir: './static',
+          name: 'rss.xml'
+        }
+      }
+    },
+
+    {
       use: 'gridsome-plugin-fathom',
       options: {
         siteId: 'YZUZBGIG',
