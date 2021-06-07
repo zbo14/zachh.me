@@ -156,7 +156,7 @@ export default {
             'Added logging via Slack webhooks to lower response times',
             'Secured cloud resources with VPN in preparation for audit',
             'Led frontend migration to CDN to improve performance & UX',
-            'Automated release process and featured branch deployment',
+            'Automated release process and feature branch deployment',
             'Constructed staging environment to QA before production'
           ]
         },

@@ -7,8 +7,6 @@ date: 2020-01-07
 
 I recently reread [this post](https://portswigger.net/research/http-desync-attacks-request-smuggling-reborn) on HTTP/S desync vulnerabilities. I like the way the author breaks down the methodology of addressing the vulnerability into multiple stages (i.e. detect, confirm, explore, exploit). It got me wondering whether I could write a barebones tool to automate at least some of these steps.
 
-
-
 For those unfamiliar, an HTTP/S desync vulnerability arises when a frontend server (e.g. CDN) handles web requests before sending them to a backend server and the two servers disagree where the requests begin and end. As a result, the servers process different requests. This is problematic because an attacker could "smuggle" a malicious request past the frontend server that would normally be blocked and the backend server processes the request and responds.
 
 How can an attacker get the frontend and backend servers to disagree on request boundaries? One way is to send an HTTP/S request with a [Content-Length](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Length) header *and* a [Transfer-Encoding](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Transfer-Encoding) header. In some cases, the frontend refers to one header (e.g. Content-Length) and the backend refers to the other (Transfer-Encoding). The frontend server sees the following.
