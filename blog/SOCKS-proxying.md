@@ -64,21 +64,21 @@ Once again, "10.12.117.160" is my laptop's address. The "10.12.115.1" address co
 How can we prevent the coffee shop Wi-Fi snooper from seeing the destination addresses of our packets and the hostnames we're visiting? We could pay to use a VPN service or run our own VPN, but this is a lot of work. Another option, which I'll discuss in greater detail, is running a SOCKS v5 proxy on our local machine that tunnels our web traffic and DNS requests over SSH (read: encrypted) to a daemon running in the cloud. From the cloud, the DNS requests are sent unencrypted to some DNS server. Once again, kicking the can down the road but I'd like to think we're kicking it to a part of the road where fewer people are watching.
 
 ```mermaid
-  graph LR
-		subgraph reddit
-		443
-		end
-		subgraph cloud
-		EPORT
-		EPORT-->|2|443
-		end
-    subgraph laptop
-    * -->|1|EPORT
-    LPORT-. 3 .-> 443
-		style EPORT stroke-width:4px
-    linkStyle default stroke-width:2px,fill:none
-    linkStyle 2 stroke-width:2px,fill:none,stroke-dasharray:3
-    end
+graph LR
+subgraph reddit
+443
+end
+subgraph cloud
+EPORT
+EPORT-->|2|443
+end
+subgraph laptop
+* -->|1|EPORT
+LPORT-. 3 .-> 443
+style EPORT stroke-width:4px
+linkStyle default stroke-width:2px,fill:none
+linkStyle 2 stroke-width:2px,fill:none,stroke-dasharray:3
+end
 ```
 
 Alright, let's get into it. Install [socksproxy](https://github.com/zbo14/socksproxy) on your local machine. Since `socksproxy`'s a systemd service, it runs on Linux. At the time of writing, I've tested it on Ubuntu and Raspbian.
