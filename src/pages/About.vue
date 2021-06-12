@@ -59,8 +59,7 @@ export default {
 
           company: {
             name: 'Gatherly',
-            link: 'https://gatherly.io',
-            hiring: 'https://gatherly.breezy.hr/'
+            link: 'https://gatherly.io'
           },
 
           description: 'Now, I\'m working on a spatial video chat platform to make online events more accessible and enjoyable!'
