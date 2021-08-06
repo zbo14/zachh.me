@@ -1,5 +1,5 @@
 {
-  "name": "personal-site-v2",
+  "name": "zachh.me",
   "private": true,
   "scripts": {
     "build": "gridsome build",
