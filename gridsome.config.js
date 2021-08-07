@@ -10,6 +10,17 @@ module.exports = {
   siteName: 'Zach Balder',
   siteUrl: 'https://zachh.me',
 
+  configureWebpack: {
+    module: {
+      rules: [
+        {
+          test: /\.m4a$/,
+          loader: 'file-loader'
+        }
+      ]
+    }
+  },
+
   css: {
     loaderOptions: {
       postcss: {
@@ -29,6 +40,15 @@ module.exports = {
         baseDir: './blog',
         path: '*.md',
         typeName: 'Post'
+      }
+    },
+
+    {
+      use: '@gridsome/source-filesystem',
+      options: {
+        baseDir: './memos',
+        path: '*.md',
+        typeName: 'Memo'
       }
     },
 
@@ -74,7 +94,8 @@ module.exports = {
   ],
 
   templates: {
-    Post: '/blog/:title'
+    Post: '/blog/:title',
+    Memo: '/memos/:title'
   },
 
   titleTemplate: '%s ~',

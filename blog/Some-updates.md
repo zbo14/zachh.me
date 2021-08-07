@@ -1,5 +1,5 @@
 ---
-"slug": "some-updates"
+slug: "some-updates"
 title: "Some updates"
 description: ""
 date: 2020-03-14

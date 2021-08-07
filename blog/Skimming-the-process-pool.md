@@ -1,5 +1,5 @@
 ---
-"slug": "skimming-the-process-pool"
+slug: "skimming-the-process-pool"
 title: "Skimming the process pool"
 description: ""
 date: 2020-08-03

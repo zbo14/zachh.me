@@ -1,5 +1,5 @@
 ---
-"slug": "new(ish)-site"
+slug: "new(ish)-site"
 title: "New(ish) site"
 description: ""
 date: 2021-05-11

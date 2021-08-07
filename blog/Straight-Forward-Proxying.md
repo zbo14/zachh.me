@@ -1,5 +1,5 @@
 ---
-"slug": "straight-forward-proxying"
+slug: "straight-forward-proxying"
 title: "Straight forward proxying"
 description: ""
 date: 2019-10-09

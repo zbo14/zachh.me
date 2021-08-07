@@ -1,5 +1,5 @@
 ---
-"slug": "automatic-certificate-renewal-without-downtime"
+slug: "automatic-certificate-renewal-without-downtime"
 title: "Automatic certificate renewal without downtime"
 description: ""
 date: 2021-06-09

@@ -1,5 +1,5 @@
 ---
-"slug": "sshing-over-a-tunnel-to-a-reverse-tunnel"
+slug: "sshing-over-a-tunnel-to-a-reverse-tunnel"
 title: "SSHing over a tunnel to a reverse tunnel"
 date: 2019-08-23
 ---

@@ -1,5 +1,5 @@
 ---
-"slug": "socks-proxying"
+slug: "socks-proxying"
 title: "SOCKS proxying"
 description: ""
 date: 2019-10-11

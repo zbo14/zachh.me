@@ -2,7 +2,7 @@
   <div class="font-custom text-sm sm:text-base">
     <header class="flex h-10 sm:h-2 my-2 sm:my-8">
       <nav :class="{ 'scrolled': !topOfPage }" class="fixed bg-indigo-100 top-0 py-6 sm:py-4 flex w-full z-10">
-        <div class="flex justify-between ml-12 my-auto w-3/4">
+        <div class="flex justify-between ml-12 my-auto w-full">
           <g-link v-for="(page, index) in pages" class="hidden sm:inline-flex text-black" :to="page.path" :key="index">
             <p class="pr-0.5">{{ page.text }}</p><i :class="`ml-1 ri-${page.icon}-fill`" />
           </g-link>
@@ -74,6 +74,11 @@ export default {
           icon: 'book-read',
           path: '/blog/',
           text: 'Blog'
+        },
+        {
+          icon: 'file-music',
+          path: '/memos/',
+          text: 'Memos'
         },
         {
           icon: 'artboard',

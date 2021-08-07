@@ -1,5 +1,5 @@
 ---
-"slug": "detect-and-confirm-desync-vulnerabilities"
+slug: "detect-and-confirm-desync-vulnerabilities"
 title: "Detect and confirm desync vulnerabilities"
 description: ""
 date: 2020-01-07

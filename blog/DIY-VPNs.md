@@ -1,5 +1,5 @@
 ---
-"slug": "diy-vpns"
+slug: "diy-vpns"
 title: "DIY VPNs"
 description: ""
 date: 2019-11-13
