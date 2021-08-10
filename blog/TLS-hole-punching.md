@@ -2,7 +2,7 @@
 "slug": "tls-hole-punching"
 title: "TLS hole punching"
 description: ""
-date: 2021-07-08
+date: 2021-07-14
 ---
 
 [Hole punching](https://en.wikipedia.org/wiki/Hole_punching_%28networking%29) is a technique that allows 2 peers on disparate private networks to communicate directly with each other. Hole punching exists because most routers on private home and office networks perform [network address translation](https://en.wikipedia.org/wiki/Network_address_translation) (NAT), a method that's grown in popularity under looming IPv4 address exhaustion. This means people browsing the web on a private NAT-ed network *do not* have globally unique, public IPv4 addresses to identify their devices. In fact, they typically "share" a public IP address assigned by their Internet Service Provider (ISP) with other devices on the network. NAT creates a mapping by modifying IP packet headers such that incoming traffic is routed to the appropriate device on the network. Suppose I'm checking my email on my phone and my roommate is simultaneously watching a movie on his laptop. NAT makes sure the traffic pertaining to the former is routed to my phone and traffic relating to the latter is routed to my roommate's computer.
@@ -13,7 +13,7 @@ If I want to connect directly to my friend on another network, I run into severa
 
 There are 2 types of hole punching, one for each major Internet transport protocol: [UDP](https://en.wikipedia.org/wiki/User_Datagram_Protocol) and [TCP](https://en.wikipedia.org/wiki/Transmission_Control_Protocol). UDP hole punching is the more prevalent of the two, commonly used for VoIP and gaming. Direct p2p communication improves latency, often times critical in realtime applications. UDP makes no promises regarding reliable delivery of data, but this "shortcoming" is preferable for certain use cases. If I'm video chatting my friend, it's ok if packets are dropped. Their video might freeze for a second and their audio might cut out. The more important point is, when the chat resumes, I see and hear the latest video and audio. I don't need or even want to receive the earlier media that was dropped.
 
-TCP, on the other hand, ensures reliable delivery. Everything is eventually delivered in the order it was sent. Packets can still be dropped, but they'll be resent. This isn't ideal for video chatting my friend, but well suited for other use cases such as file sharing, where the entire content should eventually be delivered uncorrupted. Using TLS, we can secure the connection by encrypting all the content that is sent over the wire. This prevents eavesdroppers and network sniffers from seeing what content is shared. My peer is the only party that can access the actual file.
+TCP, on the other hand, ensures reliable delivery. Everything is eventually delivered in the order it was sent. Packets can still be dropped, but they'll be resent. This isn't ideal for video chatting my friend, but well suited for other use cases such as file sharing, where the entire content should eventually be delivered uncorrupted. Using [Transport Layer Security](https://en.wikipedia.org/wiki/Transport_Layer_Security), or TLS, we can secure the connection by encrypting all the content that is sent over the wire. This prevents eavesdroppers and network sniffers from seeing what content is shared. My peer is the only party that can access the actual file.
 
 Combining TLS with TCP hole-punching achieves a direct, reliable, and secure connection between peers. I'll walk through some code and packet traces that outline how this facilitates encrypted p2p communication. I created a [repo](https://github.com/zbo14/tls-hole-punching) in case you want to inspect the source or run the demo yourself.
 
@@ -48,7 +48,7 @@ alice.54312 > bob.54312: Flags [.], ack 1, win 502, options [nop,nop,TS val 3414
 
 Each line in the above snippet corresponds to a step in the [3-way handshake](https://en.wikipedia.org/wiki/Transmission_Control_Protocol#Connection_establishment): SYN, SYN-ACK, and ACK. Alice performs the "active open" by initially sending the SYN. Bob performs the "passive open" by responding with the SYN-ACK. Alice completes connection establishment by sending the ACK. Nothing unusual here.
 
-What happens if Alice and Bob run our python code with no additional firewall rules? `tcpdump` yields a different packet capture:
+What happens if Alice and Bob run our python code with no additional firewall rules? `tcpdump` yields a different packet capture depicting the TCP simultaneous open:
 
 ```
 alice.54312 > bob.54312: Flags [S], seq 3435528952, win 64240, options [mss 1460,sackOK,TS val 3389124722 ecr 0,nop,wscale 7], length 0
@@ -59,8 +59,41 @@ bob.54312 > alice.54312: Flags [.], ack 1, win 1004, options [nop,nop,TS val 145
 
 We have 4 lines this time! Alice performs the initial active open. Then Bob sends a SYN, Alice responds with the SYN-ACK, and Bob completes the handshake with the ACK. What's happening here?!
 
-Alice's initial SYN doesn't make it to Bob. The router on Bob's network deems the SYN unsolicited and drops it. However, once Alice's SYN made it past her router, it stored a NAT mapping between Alice's machine and Bob's endpoint. Even though he didn't receive Alice's SYN, Bob performed the active open as well and sent his own SYN. When the SYN arrived at Alice's router, it matched the NAT mapping and was forwarded to Alice's machine. The 3-way handshake then proceeded per usual.
+Alice's initial SYN doesn't make it to Bob. The router on Bob's network deems the SYN unsolicited and drops it. However, Alice's router stores a NAT mapping between Alice's machine and Bob's endpoint once it forwards her SYN to Bob. Even though he doesn't receive Alice's SYN, Bob performs the active open as well and sends his own SYN. When the SYN arrives at Alice's router, it matches the NAT mapping and is forwarded to Alice's machine. The 3-way handshake then proceeds per usual.
 
-Take a look at the [TCP state diagram](https://upload.wikimedia.org/wikipedia/commons/f/f6/Tcp_state_diagram_fixed_new.svg). In the first snippet, Alice and Bob followed the "client" and "server" paths, respectively. In the second snippet, Alice started on the client path but then moved from SYN-SENT to SYN-RECEIVED and continued along the server path. Bob, on the other hand, followed the client path entirely.
+Take a look at the [TCP state diagram](https://upload.wikimedia.org/wikipedia/commons/f/f6/Tcp_state_diagram_fixed_new.svg). In the first snippet, Alice and Bob follow the "client" and "server" paths, respectively. In the second snippet, Alice starts on the client path but then moves from SYN-SENT to SYN-RECEIVED and continues along the server path. Bob, on the other hand, follows the client path entirely.
 
 Alice and Bob's simultaneous open differs from other simultaneous opens where *each* party receives the other's SYN, moves from SYN-SENT to SYN-RECEIVED, and then ACKs. Of course, this path is unrealistic in scenarios where both peers are on NAT-ed networks. Someone's initial inbound traffic will be dropped. :/
+
+Alright, Alice and Bob have established a direct connection. How do they go about securing this channel of communication? Fortunately, it's fairly easy to "wrap" an existing TCP connection with a secure TLS context. Take a look at the following Python code:
+
+```python
+import socket
+import ssl
+
+sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+
+sock.bind(('', 54312))
+
+# remote_ip is the other party's public IPv4 address
+sock.connect((remote_ip, 54312))
+
+server_side = False # 1 peer should set this to True
+proto = ssl.PROTOCOL_TLS_SERVER if server_side else ssl.PROTOCOL_TLS_CLIENT
+
+context = ssl.SSLContext(proto)
+
+if server_side:
+    context.load_cert_chain('/path/to/cert', '/path/to/key')
+else:
+    context.check_hostname = False
+    context.verify_mode = ssl.CERT_NONE
+
+tls_sock = context.wrap_socket(sock=sock, server_side=server_side)
+```
+
+The beginning should look familiar. After we establish the connection, we create a TLS context and wrap the existing TCP socket with this context. **Note:** TLS was formerly named SSL, or Secure Sockets Layer. Despite the name holdover, the above code is in fact using TLS.
+
+TLS also follows a client-server paradigm. Even though both peers act as clients with regard to TCP, 1 peer must act as the TLS server and the other as the TLS client. For the sake of simplicity, I hard-coded the value in the above snippet, so the `server_side` peer would simply change the value to `True`. However, there are ways to coordinate role agreement programmatically. For instance, a naive approach involves each peer comparing its public IP address against its peer's address. The peer with the lexicographically "greater" address is the server and the other is the client.
+
+We need some trickery to shoehorn our p2p implementation into a client-server framework. The server needs to load a TLS certificate and the corresponding private key. This can be a self-signed certificate for "localhost" generated by [OpenSSL](https://www.openssl.org/) or the like. Since we specify peers by public IP address and external port, we don't care about hostnames or verifying them. Hostname verification is absolutely essential for the web, but for our case, we really only care about encryption. This is why the TLS client sets `context.check_hostname` to `False` and `context.verify_mode` to `ssl.CERT_NONE`. There are certainly other ways to secure existing TCP connections, but this approach seemed fairly simple despite a bit of shoehorning, while leveraging existing modules in the Python standard library.
