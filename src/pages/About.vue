@@ -5,7 +5,8 @@
     <div v-for="(step, idx) in myPath" :key="idx">
       <div class="inline-flex">
         <img :class="[step.image.height, step.image.width, 'my-6', 'rounded'].filter(Boolean)" :src="getImgURL(step.image.file)">
-        <g-link class="font-semibold mx-4 my-auto text-black text-lg" :href="step.company.link">{{ step.company.name }}</g-link>
+        <g-link v-if="step.company.link" class="font-semibold mx-4 my-auto text-black text-lg" :href="step.company.link">{{ step.company.name }}</g-link>
+        <p v-else class="font-semibold mx-4 my-auto text-black text-lg" :href="step.company.link">{{ step.company.name }}</p>
       </div>
       <div>
         <p>{{ step.description }}  <g-link class="my-auto" v-if="step.company.hiring" :href="step.company.hiring">And we're hiring!</g-link></p>
@@ -23,13 +24,11 @@ export default {
           image: {
             file: 'ujo.png',
             height: 'h-6',
-            link: 'https://ujomusic.com/',
             width: 'w-12'
           },
 
           company: {
-            name: 'Ujo Music',
-            link: 'https://ujomusic.com'
+            name: 'Ujo Music'
           },
 
           description: 'As a software developer at Ujo, I worked at the intersection of music and decentralized technologies, including Ethereum and IPFS.'
@@ -38,7 +37,6 @@ export default {
           image: {
             file: 'starry.png',
             height: 'h-10',
-            link: 'https://starry.com/',
             width: 'w-10'
           },
 
@@ -53,7 +51,6 @@ export default {
           image: {
             file: 'gatherly.jpeg',
             height: 'h-10',
-            link: 'https://www.gatherly.io/',
             width: 'w-10'
           },
 
