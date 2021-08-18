@@ -48,7 +48,13 @@ Before we dig into TCP simultaneous open, let's add some firewall rules and run 
 1.2.3.4.54312 > 5.6.7.8.54312: Flags [.], ack 1, win 502, options [nop,nop,TS val 3414096138 ecr 1482156387], length 0
 ```
 
-Each line in the above snippet corresponds to a step in the [3-way handshake](https://en.wikipedia.org/wiki/Transmission_Control_Protocol#Connection_establishment): SYN, SYN-ACK, and ACK. Alice performs the "active open" by initially sending the SYN. Bob performs the "passive open" by responding with the SYN-ACK. Alice completes connection establishment by sending the ACK. Nothing unusual here.
+Each line in the above snippet corresponds to a step in the [3-way handshake](https://en.wikipedia.org/wiki/Transmission_Control_Protocol#Connection_establishment): SYN, SYN-ACK, and ACK. Alice performs the "active open" by initially sending the SYN. Bob performs the "passive open" by responding with the SYN-ACK. Alice completes connection establishment by sending the ACK.
+
+Have a look at the following TCP state diagram:
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/f/f6/Tcp_state_diagram_fixed_new.svg">
+
+There's a lot going on! The important point for now: Alice and Bob follow the "client" and "server" paths to connection establishment, respectively.
 
 What happens if Alice and Bob run our Python code with no permissive firewall rules? `tcpdump` yields a different packet capture depicting the TCP simultaneous open:
 
@@ -63,7 +69,7 @@ We have 4 lines this time! Alice performs the initial active open. Then Bob send
 
 Alice's initial SYN doesn't make it to Bob. The router on Bob's network deems the SYN unsolicited and drops it. However, Alice's SYN "punches a hole" when it passes through her router. In other words, her router stores a NAT mapping between Alice's machine and Bob's endpoint. When Bob's SYN arrives at Alice's router, it matches the NAT mapping and is forwarded to Alice's machine. The 3-way handshake then proceeds as usual.
 
-Take a look at the [TCP state diagram](https://upload.wikimedia.org/wikipedia/commons/f/f6/Tcp_state_diagram_fixed_new.svg). In the first example, Alice and Bob follow the "client" and "server" paths, respectively. In the second snippet, Alice starts on the client path but then moves from SYN-SENT to SYN-RECEIVED and continues along the server path. Bob, on the other hand, follows the client path entirely.
+Take another look at the TCP state diagram. In this example, Alice starts on the client path but then moves from SYN-SENT to SYN-RECEIVED and continues along the server path. Bob, on the other hand, follows the client path entirely.
 
 There are a [couple conditions](https://en.wikipedia.org/wiki/TCP_hole_punching#Other_requirements_on_the_NAT_to_comply_with_TCP_simultaneous_open) necessary for TCP simultaneous open to work. Each peer's NAT should...
 
