@@ -73,14 +73,15 @@ export default {
       technicalSkills: {
         Languages: [
           'JavaScript',
-          'Go',
           'Python',
+          'Go',
           'Bash'
         ],
 
         Frameworks: [
           'Fastify',
           'Vue',
+          'Nuxt',
           'Express',
           'React'
         ],
@@ -89,14 +90,15 @@ export default {
           'MongoDB',
           'Redis',
           'DynamoDB',
-          'Elasticsearch'
+          'SQLite+Sequelize'
         ],
 
         'Cloud/CDN': [
           'AWS',
-          'DigitalOcean',
-          'GitHub Pages',
-          'Netlify'
+          'Vultr',
+          'Linode',
+          'Netlify',
+          'Vercel'
         ],
 
         AWS: [
@@ -141,7 +143,7 @@ export default {
           company: 'Gatherly',
           role: 'Senior Software engineer',
           start: 'Nov 2020',
-          end: 'Present',
+          end: 'Aug 2021',
 
           techUsed: [
             'Node+npm',
