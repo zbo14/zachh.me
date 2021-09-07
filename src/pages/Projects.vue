@@ -15,7 +15,7 @@
     <br>
     <h2 class="italic mb-4">Want to work on something together?</h2>
     <p>I'm always excited for opportunities to collaborate on projects!</p>
-    <p>Feel free to reach out on social or email: zmbalder{at}gmail{dot}com.</p>
+    <p>Feel free to reach out on social or email: zach{at}zachh{dot}me.</p>
   </Layout>
 </template>
 

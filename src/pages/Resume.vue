@@ -2,7 +2,7 @@
   <Layout>
     <div class="print text-xs sm:text-base">
       <h1>Zach Balder</h1>
-      <h2 class="mb-4">zmbalder{at}gmail{dot}com</h2>
+      <h2 class="mb-4">zach{at}zachh{dot}me</h2>
       <p class="my-4">Backend software engineer interested in designing applications and building web infrastructure with availability, scalability, and flexibility in mind.</p>
       <h1 class="my-4">Technical Skills</h1>
       <table>
