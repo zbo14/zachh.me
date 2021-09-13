@@ -20,13 +20,13 @@
       <div class="flex my-8">
         <i class="mr-2 my-auto ri-terminal-fill"></i>
         <p class="my-auto text-lg">
-          Former engineer at <g-link href="https://starry.com">Starry</g-link>
+          Former engineer at <g-link href="https://starry.com">Starry</g-link> and <g-link href="https://gatherly.io">Gatherly</g-link>
         </p>
       </div>
       <div class="flex my-8">
         <i class="mr-2 my-auto ri-terminal-fill"></i>
         <p class="my-auto text-lg">
-          Currently building at <g-link href="https://gatherly.io">Gatherly</g-link>
+          Currently building at <g-link href="https://tunnelbear.com">TunnelBear</g-link>
         </p>
       </div>
     </div>

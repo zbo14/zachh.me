@@ -20,7 +20,7 @@
         <h2 class="font-semibold">{{ job.company }}, {{ job.role }}</h2>
           <div class="pt-1 pb-2">
             <p>{{ job.start }} - {{ job.end }}</p>
-            <p class="italic">Tech: {{ job.techUsed.join(', ') }}</p>
+            <p v-if="job.techUsed.length" class="italic">Tech: {{ job.techUsed.join(', ') }}</p>
           </div>
           <ul class="list-disc list-inside">
             <li v-for="action in job.actions">{{ action }}</li>
@@ -139,6 +139,15 @@ export default {
       ],
 
       jobs: [
+        {
+          company: 'TunnelBear',
+          role: 'Software engineer',
+          start: 'Sep 2021',
+          end: 'Present',
+
+          techUsed: [],
+          actions: []
+        },
         {
           company: 'Gatherly',
           role: 'Senior Software engineer',
