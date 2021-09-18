@@ -103,7 +103,8 @@ module.exports = {
   transformers: {
     remark: {
       plugins: [
-        'gridsome-plugin-remark-mermaid'
+        'gridsome-plugin-remark-mermaid',
+        '@gridsome/remark-prismjs'
       ]
     }
   }

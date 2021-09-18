@@ -4,6 +4,7 @@
 import vClickOutside from 'v-click-outside'
 import '~/main.css'
 import DefaultLayout from '~/layouts/Default.vue'
+import 'prismjs/themes/prism-twilight.css'
 
 export default function (Vue, { router, head, isClient }) {
   Vue.use(vClickOutside)
