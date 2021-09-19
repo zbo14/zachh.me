@@ -1,6 +1,5 @@
 {
   "name": "zachh.me",
-  "private": true,
   "scripts": {
     "build": "gridsome build",
     "develop": "gridsome develop",
