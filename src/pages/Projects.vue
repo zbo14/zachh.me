@@ -13,14 +13,36 @@
     <h2 class="italic mb-4">I'm interested in assisting other developers</h2>
     <p>In <b>2021</b>, I've worked on a <g-link href="https://github.com/zbo14/tls-refresh">couple</g-link> <g-link href="https://github.com/zbo14/certnode"> projects</g-link> to make TLS certificate 🔐 issuance and renewal more accessible. This effort piggybacks on a much larger undertaking by the <g-link href="https://www.abetterinternet.org/">ISRG</g-link> and other organizations to increase Internet security. Developers have many tools at their disposal to secure their websites and web services and lately, I've been focused on ways to make this tooling even easier to use.</p>
     <br>
-    <h2 class="italic mb-4">Want to work on something together?</h2>
-    <p>I'm always excited for opportunities to collaborate on projects!</p>
-    <p>Feel free to reach out on social or email: zach{at}zachh{dot}me.</p>
+    <h2 class="italic mb-4">What have I been working on recently?</h2>
+    <ul>
+      <li class="mb-4" v-for="(project, name) in projects">
+        <h3 class="mb-2">
+          <a :href="project.url">{{ name }}</a>
+        </h3>
+        <p>{{ project.description }}</p>
+      </li>
+    </ul>
   </Layout>
 </template>
 
 <script>
 export default {
+  data () {
+    return {
+      projects: {
+        'linkmo 🔗': {
+          description: 'A tool that generates shareable payment links for venmo.',
+          url: 'https://www.npmjs.com/package/linkmo'
+        },
+
+        'soundtip 💸': {
+          description: 'A Spotify app that makes it easy to tip artists you\'re listening to.',
+          url: 'https://soundtip.xyz'
+        }
+      }
+    }
+  },
+
   metaInfo: {
     title: 'Projects'
   }

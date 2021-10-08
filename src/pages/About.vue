@@ -22,19 +22,6 @@ export default {
       myPath: [
         {
           image: {
-            file: 'ujo.png',
-            height: 'h-6',
-            width: 'w-12'
-          },
-
-          company: {
-            name: 'Ujo Music'
-          },
-
-          description: 'As a software developer at Ujo, I worked at the intersection of music and decentralized technologies, including Ethereum and IPFS.'
-        },
-        {
-          image: {
             file: 'starry.png',
             height: 'h-10',
             width: 'w-10'

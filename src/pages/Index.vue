@@ -12,21 +12,18 @@
         <h1 class="mx-4 my-auto">Hi, my name's Zach!</h1>
       </div>
       <div class="flex my-8">
-        <i class="mr-2 my-auto ri-terminal-fill"></i>
         <p class="my-auto text-lg">
-          I'm an open-source developer
+          > I'm an open-source developer
         </p>
       </div>
       <div class="flex my-8">
-        <i class="mr-2 my-auto ri-terminal-fill"></i>
         <p class="my-auto text-lg">
-          Former engineer at <g-link href="https://starry.com">Starry</g-link> and <g-link href="https://gatherly.io">Gatherly</g-link>
+          > Former engineer at <g-link href="https://starry.com">Starry</g-link> and <g-link href="https://gatherly.io">Gatherly</g-link>
         </p>
       </div>
       <div class="flex my-8">
-        <i class="mr-2 my-auto ri-terminal-fill"></i>
         <p class="my-auto text-lg">
-          Currently building at <g-link href="https://tunnelbear.com">TunnelBear</g-link>
+          > Currently building at <g-link href="https://tunnelbear.com">TunnelBear</g-link>
         </p>
       </div>
     </div>
