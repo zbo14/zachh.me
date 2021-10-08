@@ -44,7 +44,8 @@ export default {
           'Gridsome',
           'GitHub Pages',
           'Jekyll',
-          'Netlify'
+          'Netlify',
+          'Would you like a site like this? :)'
         ],
 
         'Backend development & maintenance': [

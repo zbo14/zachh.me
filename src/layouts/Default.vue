@@ -147,6 +147,23 @@ export default {
       this.bottomOfPage = this.atBottomOfPage()
       this.topOfPage = window.pageYOffset <= 0
     }
+  },
+
+  metaInfo: {
+    meta: [
+      {
+        property: 'og:title',
+        content: 'Zach Balder ~'
+      },
+      {
+        property: 'og:image',
+        content: '../../static/images/me.jpeg'
+      },
+      {
+        property: 'og:description',
+        content: 'software engineer / voice memo recording artist ~'
+      }
+    ]
   }
 }
 </script>
