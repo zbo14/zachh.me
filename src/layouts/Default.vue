@@ -161,7 +161,7 @@ export default {
       },
       {
         property: 'og:image',
-        content: require.context('../../static/images/')('./me.jpeg')
+        content: 'https://zachh.me' + require.context('../../static/images/')('./me.jpeg')
       },
       {
         property: 'og:description',
