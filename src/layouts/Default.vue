@@ -152,6 +152,10 @@ export default {
   metaInfo: {
     meta: [
       {
+        property: 'og:type',
+        content: 'website'
+      },
+      {
         property: 'og:title',
         content: 'Zach Balder ~'
       },
