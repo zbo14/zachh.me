@@ -157,11 +157,11 @@ export default {
       },
       {
         property: 'og:image',
-        content: '../../static/images/me.jpeg'
+        content: require.context('../../static/images/')('./me.jpeg')
       },
       {
         property: 'og:description',
-        content: 'software engineer / voice memo recording artist ~'
+        content: 'Welcome to my corner of the internet :)'
       }
     ]
   }

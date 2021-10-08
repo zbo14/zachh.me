@@ -81,10 +81,6 @@ export default {
     }, 500)
 
     whoami.classList.remove('invisible')
-  },
-
-  metaInfo: {
-    title: 'Home'
   }
 }
 </script>
