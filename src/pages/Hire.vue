@@ -1,19 +1,26 @@
 <template>
   <Layout>
     <h1 class="mb-6 sm:mb-8">Hire me!</h1>
-    <h2 class="mb-4">Guess what? I freelance in the following areas:</h2>
+    <h2 class="italic my-8">Guess what? I freelance in the following areas:</h2>
     <ul class="list-disc list-inside">
       <li v-for="area in areas">{{ area }}</li>
     </ul>
-    <h2 class="my-4">Some services I offer:</h2>
-    <div class="mb-4" v-for="(details, service) in services">
-      <p class="font-semibold mb-2">{{ service }}</p>
+    <h2 class="italic mt-8">Some services I offer:</h2>
+    <div class="mt-8" v-for="(details, service) in services">
+      <p class="font-semibold my-2">{{ service }}</p>
       <ul class="list-disc list-inside">
-        <li v-for="detail in details">{{ detail }}</li>
+        <li v-for="detail in details">
+          <a v-if="Array.isArray(detail)" :href="detail[1]" target="_blank">
+            {{ detail[0] }}
+          </a>
+          <span v-else>
+            {{ detail }}
+          </span>
+        </li>
       </ul>
     </div>
     <br>
-    <p class="mb-2">If any of this sounds interesting or helpful, please email <span class="italic">zach{at}zachh{dot}me</span> for rates.</p>
+    <p class="mt-4 mb-2">If any of this sounds interesting or helpful, please email <span class="italic">zach{at}zachh{dot}me</span> for rates.</p>
     <p>Have something in mind that isn't listed but still want to connect? Please reach out!</p>
   </Layout>
 </template>
@@ -30,9 +37,9 @@ export default {
 
       services: {
         'Workflow automation': [
-          'Bash scripting',
-          'Browser automation (e.g. puppeteer)',
-          'Task scheduling via cron'
+          ['Bash scripting', 'https://github.com/zbo14/wirevpn-server'],
+          ['Browser automation (e.g. puppeteer)', 'https://github.com/zbo14/sourcery'],
+          'Task scheduling'
         ],
 
         'Data extraction & processing': [
@@ -41,20 +48,16 @@ export default {
         ],
 
         'Static site build & deployment': [
-          'Gridsome',
-          'GitHub Pages',
-          'Jekyll',
-          'Netlify',
-          'Would you like a site like this? :)'
+          ['Gridsome + Netlify', 'https://zachh.me'],
+          ['Jekyll + GitHub Pages', 'https://zbo14.github.io']
         ],
 
         'Backend development & maintenance': [
           'DNS record creation & migration',
-          'REST API design, implementation, & documentation',
+          'REST API design & implementation',
           'Database management',
-          'Serverless functions',
-          'Vercel',
-          'VPS provisioning'
+          ['Serverless functions (Vercel)', 'https://github.com/zbo14/fastify-nuxt-vercel'],
+          ['VPS provisioning', 'https://mastodon.zachh.me/@zach']
         ]
       }
     }
