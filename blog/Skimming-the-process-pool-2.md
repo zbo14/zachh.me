@@ -2,10 +2,10 @@
 slug: "skimming-the-process-pool-2"
 title: "Skimming the process pool (part 2)"
 description: ""
-date: 2021-11-03
+date: 2021-11-04
 ---
 
-In a [previous post](/blog/skimming-the-process-pool), I discuss when and how you might use `xargs` as a process pool to speed up computations, without exhausting resources on your machine or network. In this post, I'll walk through some Node code that implements a similar process pool. Then we'll look at ways to extend this code beyond explicitly spawning OS processes.
+In a [previous post](/blog/skimming-the-process-pool), I discuss when and how you might use `xargs` as a process pool to speed up computations, without exhausting resources on your machine or network. In this post, I'll walk through some Node code that implements a similar process pool. Then we'll look at ways to extend this code beyond explicitly spawning processes.
 
 This implementation uses a pattern I've found myself writing a lot recently, which I call the "resolve queue". In JavaScript, [promises](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) have "resolve" and "reject" callbacks that determine whether the promise resolves with a value or rejects with an error, respectively.
 
@@ -78,6 +78,6 @@ This pattern is useful for other expensive operations besides the explicit spawn
 
 Browser automation is another potential use case. Suppose we have a list of 100 URLs we want to scrape. We *can't* use something like [`cheerio`](https://cheerio.js.org/) to scrape the webpages because, let's assume, a lot of them contain JavaScript that renders HTML in the browser. Instead, we use a browser automation tool like [`puppeteer`](https://developers.google.com/web/tools/puppeteer/) to open browser tabs, navigate to each URL, and scrape the data we want.
 
-Visiting 100 URLs in serial takes some time, even with automation. If we open 100 chrome tabs at the same time, we'll hear some fan whirring and our machine will likely freeze up. Not to mention, we'll be sending out hundreds of HTTP/S requests, which could aggravate the web services we're scraping. Ideally, we'd open a handful of tabs and do the following in each of them: (1) visit an unvisited URL, (2) scrape the data we want, and (3) repeat until there are no unvisited URLs left. This requires some modification to the above snippet, but it leverages the same control flow. Instead of a process pool, we can think of it as a "browser tab pool", although chromium is spinning up processes for tab rendering, behind the scenes. I'll leave the implementation as an exercise to the reader.
+Visiting 100 URLs in serial takes some time, even with automation. If we open 100 chrome tabs at the same time, we'll hear some fan whirring and our machine will likely freeze up. Not to mention, we'll be sending out hundreds of HTTP/S requests, which could aggravate the web services we're scraping. Ideally, we'd open a handful of tabs and do the following in each of them: (1) visit an unvisited URL, (2) scrape the data we want, and (3) repeat until there are no unvisited URLs left. This requires some modification to the above snippet, but it leverages the same control flow. Instead of a process pool, we can think of it as a "browser tab pool", although chromium is spinning up processes, behind the scenes, for tab rendering. I'll leave the implementation as an exercise to the reader.
 
 Hopefully this gives you some idea how a process pool can be implemented and abstracted for other use cases :)
