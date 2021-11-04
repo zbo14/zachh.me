@@ -1,10 +1,17 @@
 {
   "name": "zachh.me",
+  "description": "my lil corner of the Internet :)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zbo14/zachh.me"
+  },
   "scripts": {
     "build": "gridsome build",
     "develop": "gridsome develop",
     "explore": "gridsome explore"
   },
+  "author": "Zachary Balder",
+  "license": "MIT",
   "dependencies": {
     "@gridsome/remark-prismjs": "^0.5.0",
     "@gridsome/source-filesystem": "^0.6.2",
