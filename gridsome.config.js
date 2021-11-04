@@ -64,7 +64,8 @@ module.exports = {
 
         feedOptions: {
           title: 'Zach Balder',
-          description: 'My blog'
+          description: 'My blog',
+          favicon: 'https://zachh.me/static/icon/favicon-32x32.png'
         },
 
         rss: {

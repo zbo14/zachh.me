@@ -74,7 +74,7 @@ This block of code might be tricky to follow, especially if one is unfamiliar wi
 
 The key thing to note is the process count never exceeds the limit (5). Our program spawns 5 processes and, regardless of how many consecutive method invocations there are, it distributes these tasks across them without spawning more. In other words, it parallelizes an arbitrary number of tasks across a fixed number of processes.
 
-This pattern is useful for other expensive operations besides the explicit spawning of processes. The pattern can be applied to CPU intensive operations that don't spawn processes. For instance, it can be used to implement a pool of [Worker Threads](https://nodejs.org/dist/latest-v16.x/docs/api/worker_threads.html) for performing CPU heavy workloads. The docs even recommend using a Worker Thread pool like this.
+This pattern is useful for other expensive operations besides the explicit spawning of processes. For instance, it can be used to implement a pool of [Worker Threads](https://nodejs.org/dist/latest-v16.x/docs/api/worker_threads.html) for performing CPU intensive workloads. The docs even recommend using a Worker Thread pool like this.
 
 Browser automation is another potential use case. Suppose we have a list of 100 URLs we want to scrape. We *can't* use something like [`cheerio`](https://cheerio.js.org/) to scrape the webpages because, let's assume, a lot of them contain JavaScript that renders HTML in the browser. Instead, we use a browser automation tool like [`puppeteer`](https://developers.google.com/web/tools/puppeteer/) to open browser tabs, navigate to each URL, and scrape the data we want.
 
