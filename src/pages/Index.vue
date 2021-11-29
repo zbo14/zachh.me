@@ -21,11 +21,6 @@
           > Former engineer at <g-link href="https://starry.com">Starry</g-link> and <g-link href="https://gatherly.io">Gatherly</g-link>
         </p>
       </div>
-      <div class="flex my-8">
-        <p class="my-auto text-lg">
-          > Currently building at <g-link href="https://tunnelbear.com">TunnelBear</g-link>
-        </p>
-      </div>
     </div>
   </Layout>
 </template>

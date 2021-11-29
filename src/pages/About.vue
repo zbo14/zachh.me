@@ -47,20 +47,6 @@ export default {
           },
 
           description: 'At Gatherly, I worked on a spatial video chat platform to make online events more accessible and enjoyable!'
-        },
-        {
-          image: {
-            file: 'tunnelbear.webp',
-            height: 'h-10',
-            width: 'w-10'
-          },
-
-          company: {
-            name: 'TunnelBear',
-            link: 'https://tunnelbear.com'
-          },
-
-          description: 'Now part of the TunnelBear team, maintaining and extending their VPN service to provide safer Internet browsing to customers.'
         }
       ]
     }

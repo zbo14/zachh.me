@@ -43,7 +43,7 @@ export default {
         ],
 
         'Data extraction & processing': [
-          'Text (e.g. regex)',
+          'Regular expressions',
           'Web scraping'
         ],
 
@@ -57,7 +57,7 @@ export default {
           'REST API design & implementation',
           'Database management',
           ['Serverless functions (Vercel)', 'https://github.com/zbo14/fastify-nuxt-vercel'],
-          ['VPS provisioning', 'https://mastodon.zachh.me/@zach']
+          'VPS provisioning'
         ]
       }
     }
