@@ -113,10 +113,6 @@ export default {
         {
           class: 'ri-twitter-fill',
           link: 'https://twitter.com/digitalAn4log'
-        },
-        {
-          class: 'ri-mastodon-fill',
-          link: 'https://mastodon.zachh.me/@zach'
         }
       ],
 
