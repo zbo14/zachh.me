@@ -135,19 +135,10 @@ export default {
         'Distributed systems',
         'Cyber Security',
         'Singing / keyboard / saxophone',
-        'Twin Peaks'
+        'Twin Peaks, Midnight Gospel'
       ],
 
       jobs: [
-        {
-          company: 'TunnelBear',
-          role: 'Software engineer',
-          start: 'Sep 2021',
-          end: 'Present',
-
-          techUsed: [],
-          actions: []
-        },
         {
           company: 'Gatherly',
           role: 'Senior Software engineer',
@@ -190,42 +181,6 @@ export default {
             'Built library to make encryption easier for team',
             'Created SNMP service to configure field hardware',
             'Wrote full-coverage tests and made infra design decisions'
-          ]
-        },
-        {
-          company: 'Ujo Music',
-          role: 'Software engineer',
-          start: 'Jun 2017',
-          end: 'Nov 2017',
-
-          techUsed: [
-            'Node+npm',
-            'git+GitHub',
-            'IPFS'
-          ],
-
-          actions: [
-            'Worked on project for handling linked data in IPFS',
-            'Made open source contributions to the COALA IP org',
-            'Collaborated with other team members in agile environment'
-          ]
-        },
-        {
-          company: 'Raise Marketplace',
-          role: 'Contract developer',
-          start: 'Aug 2016',
-          end: 'Dec 2016',
-
-          techUsed: [
-            'git+GitHub',
-            'Clojure',
-            'Ethereum'
-          ],
-
-          actions: [
-            'Collaborated with dev team on Ethereum Blockchain project',
-            'Picked up Clojure and became familiar with source code',
-            'Wrote tests and benchmarks for API calls'
           ]
         }
       ]
