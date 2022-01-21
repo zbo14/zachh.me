@@ -28,3 +28,5 @@ xargs -a "$file" -n 1 -P 10 bash -c $'
 ```
 
 Next time you'd like to parallelize the execution of many tasks, try implementing a process pool with `xargs`!
+
+**Addendum:** When I originally wrote this post, I neglected to mention [`parallel`](https://www.gnu.org/software/parallel/), an obvious choice for running tasks in parallel! This tool is, on the surface, quite similar to `xargs`. However, it allows for running tasks in parallel with a counting semaphore, distributing jobs across disparate machines with SSH login, and much more!

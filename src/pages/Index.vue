@@ -18,6 +18,11 @@
       </div>
       <div class="flex my-8">
         <p class="my-auto text-lg">
+          > Currently working at <g-link href="https://nearform.com">NearForm</g-link>
+        </p>
+      </div>
+      <div class="flex my-8">
+        <p class="my-auto text-lg">
           > Former engineer at <g-link href="https://starry.com">Starry</g-link> and <g-link href="https://gatherly.io">Gatherly</g-link>
         </p>
       </div>
