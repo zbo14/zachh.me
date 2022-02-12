@@ -36,7 +36,7 @@ export default {
         },
         {
           image: {
-            file: 'gatherly.jpeg',
+            file: 'gatherly.png',
             height: 'h-10',
             width: 'w-10'
           },
@@ -50,7 +50,7 @@ export default {
         },
         {
           image: {
-            file: 'nearform.jpg',
+            file: 'nearform.png',
             height: 'h-10',
             width: 'w-10'
           },

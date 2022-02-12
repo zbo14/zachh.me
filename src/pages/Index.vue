@@ -8,7 +8,7 @@
     </p>
     <div id="whoami" class="invisible">
       <div class="flex my-8">
-        <img class="object-scale-down h-24 rounded-full" src="../../static/images/me.jpeg"/>
+        <img class="object-scale-down h-24 rounded-full" src="../../static/images/me.png"/>
         <h1 class="mx-4 my-auto">Hi, my name's Zach!</h1>
       </div>
       <div class="flex my-8">

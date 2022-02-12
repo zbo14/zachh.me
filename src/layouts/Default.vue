@@ -157,7 +157,7 @@ export default {
       },
       {
         property: 'og:image',
-        content: 'https://zachh.me' + require.context('../../static/images/')('./me.jpeg')
+        content: 'https://zachh.me' + require.context('../../static/images/')('./me.png')
       },
       {
         property: 'og:description',
