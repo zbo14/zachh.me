@@ -6,7 +6,7 @@
       <div class="post p-1" v-html="$page.post.content" />
       <div class="flex mt-8 sm:mb-8">
         <div>
-          <g-link class="text-black hover:text-shadow-yellow" to="/blog"><< back to blog</g-link>
+          <g-link class="text-black hover:text-shadow-pink" to="/blog"><< back to blog</g-link>
         </div>
       </div>
     </div>

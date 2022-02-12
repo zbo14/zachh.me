@@ -8,7 +8,7 @@
       <div class="italic mt-2 p-1 text-sm" v-html="formatLyrics($page.memo.content)" />
       <div class="flex mt-8 sm:mb-8">
         <div>
-          <g-link class="text-black hover:text-shadow-yellow" to="/memos"><< back to memos</g-link>
+          <g-link class="text-black hover:text-shadow-pink" to="/memos"><< back to memos</g-link>
         </div>
       </div>
     </div>
