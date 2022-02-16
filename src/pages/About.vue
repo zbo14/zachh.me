@@ -47,20 +47,6 @@ export default {
           },
 
           description: 'At Gatherly, I worked on a spatial video chat platform to make online events more accessible and enjoyable!'
-        },
-        {
-          image: {
-            file: 'nearform.png',
-            height: 'h-10',
-            width: 'w-10'
-          },
-
-          company: {
-            name: 'NearForm',
-            link: 'https://www.nearform.com/'
-          },
-
-          description: 'Now I\'m at NearForm, helping clients build and maintain software architecture while contributing to open-source projects.'
         }
       ]
     }
