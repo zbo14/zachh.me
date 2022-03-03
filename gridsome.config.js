@@ -82,15 +82,6 @@ module.exports = {
           content: marked(node.content)
         })
       }
-    },
-
-    {
-      use: 'gridsome-plugin-fathom',
-      options: {
-        siteId: 'YZUZBGIG',
-        host: 'zachh.me',
-        debug: true
-      }
     }
   ],
 

@@ -25,4 +25,22 @@ export default function (Vue, { router, head, isClient }) {
     rel: 'stylesheet',
     href: 'https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css'
   })
+
+  head.link.push({
+    rel: 'preload',
+    href: 'static/images/gatherly.png',
+    as: 'image'
+  })
+
+   head.link.push({
+    rel: 'preload',
+    href: 'static/images/starry.png',
+    as: 'image'
+  })
+
+  head.link.push({
+    rel: 'preload',
+    href: 'static/images/mitch-bryant.gif',
+    as: 'image'
+  })
 }
