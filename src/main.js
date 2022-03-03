@@ -37,7 +37,7 @@ export default function (Vue, { router, head, isClient }) {
     as: 'image'
   })
 
-   head.link.push({
+  head.link.push({
     rel: 'preload',
     href: getImage('starry.png'),
     as: 'image'
