@@ -6,6 +6,11 @@ import '~/main.css'
 import DefaultLayout from '~/layouts/Default.vue'
 import 'prismjs/themes/prism-twilight.css'
 
+const getImage = filename => {
+  const imgs = require.context('../static/images/')
+  return imgs('./' + filename)
+}
+
 export default function (Vue, { router, head, isClient }) {
   Vue.use(vClickOutside)
 
@@ -28,19 +33,19 @@ export default function (Vue, { router, head, isClient }) {
 
   head.link.push({
     rel: 'preload',
-    href: 'static/images/gatherly.png',
+    href: getImage('gatherly.png'),
     as: 'image'
   })
 
    head.link.push({
     rel: 'preload',
-    href: 'static/images/starry.png',
+    href: getImage('starry.png'),
     as: 'image'
   })
 
   head.link.push({
     rel: 'preload',
-    href: 'static/images/mitch-bryant.gif',
+    href: getImage('mitch-bryant.gif'),
     as: 'image'
   })
 }
