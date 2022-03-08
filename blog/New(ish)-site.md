@@ -1,7 +1,7 @@
 ---
 slug: "new(ish)-site"
 title: "New(ish) site"
-description: ""
+description: "not-so-newish site"
 date: 2021-05-11
 ---
 

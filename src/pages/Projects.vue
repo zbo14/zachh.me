@@ -10,7 +10,7 @@
     <h2 class="italic mb-4">I like tackling complex problems</h2>
     <p>Reading through specifications, reviewing other implementations, and building my own. These steps help cement my understanding of how a system works and why it was designed the way it was. Not too long ago, I created <g-link href="https://github.com/zbo14/triple-double">my own implementation</g-link> of the Double Ratchet and Extended Triple Diffie-Hellman Algorithms, allowing users to send encrypted messages to each other over WebSockets.</p>
     <br>
-    <h2 class="italic mb-4">I'm interested in assisting other developers</h2>
+    <h2 class="italic mb-4">I'm interested in web security</h2>
     <p>In <b>2021</b>, I've worked on a <g-link href="https://github.com/zbo14/tls-refresh">couple</g-link> <g-link href="https://github.com/zbo14/certnode"> projects</g-link> to make TLS certificate 🔐 issuance and renewal more accessible. This effort piggybacks on a much larger undertaking by the <g-link href="https://www.abetterinternet.org/">ISRG</g-link> and other organizations to increase Internet security. Developers have many tools at their disposal to secure their websites and web services. I've focused on ways to make this tooling even easier to use.</p>
     <br>
     <h2 class="italic mb-4">What have I been working on recently?</h2>
@@ -38,6 +38,11 @@ export default {
         'soundtip 💸': {
           description: 'A Spotify app that makes it easy to tip artists you\'re listening to.',
           url: 'https://soundtip.xyz'
+        },
+
+        'site 💻': {
+          description: 'A simple website starter template. No framework: just HTML, JS, Less CSS, and bash scripts!',
+          url: 'https://github.com/zbo14/site'
         }
       }
     }
