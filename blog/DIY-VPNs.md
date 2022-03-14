@@ -1,7 +1,7 @@
 ---
 slug: "diy-vpns"
 title: "DIY VPNs"
-description: ""
+description: "Rolling my own WireGuard VPN"
 date: 2019-11-13
 ---
 

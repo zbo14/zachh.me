@@ -3,7 +3,7 @@
     <div class="print text-xs sm:text-base">
       <h1>Zach Balder</h1>
       <h2 class="mb-4">zach{at}zachh{dot}me</h2>
-      <p class="my-4">Backend software engineer interested in designing applications and building web infrastructure with availability, scalability, and flexibility in mind.</p>
+      <p class="my-4">Software engineer interested in designing applications and building web infrastructure.</p>
       <h1 class="my-4">Technical Skills</h1>
       <table>
         <thead>
@@ -95,10 +95,10 @@ export default {
 
         'Cloud/CDN': [
           'AWS',
-          'Vultr',
-          'Linode',
+          'Cloudflare Pages',
+          'Vercel',
           'Netlify',
-          'Vercel'
+          'Linode'
         ],
 
         AWS: [
