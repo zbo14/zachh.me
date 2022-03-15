@@ -41,7 +41,7 @@ export default {
         },
 
         'site 💻': {
-          description: 'A simple website starter template. No framework: just HTML, JS, Less CSS, and bash scripts!',
+          description: 'A simple website starter template!',
           url: 'https://github.com/zbo14/site'
         }
       }
