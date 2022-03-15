@@ -2,7 +2,7 @@
   <Layout>
     <h1 class="mb-6 sm:mb-8">Projects are my favorite way to learn!</h1>
     <h2 class="italic mb-4">I love to build things I can use everyday</h2>
-    <p>For instance, <g-link to="/blog/passing-passwords-to-myself/">this password 🔑 manager</g-link>, which I use on my desktop and iPhone daily! While researching VPNs in <b>2019</b>, I rolled my own <g-link href="https://github.com/zbo14/wirevpn-server">cloud ☁️ VPN setup</g-link>. I've since migrated to a managed VPN service; however, I got A LOT of mileage out of this "DIY VPN". My friend even used it on his phone without issue!</p>
+    <p>For instance, <g-link to="/blog/passing-passwords-to-myself/">this password 🔑 manager</g-link>, which I use on my desktop and iPhone daily! While researching VPNs in <b>2019</b>, I rolled my own <g-link href="https://github.com/zbo14/wirevpn-server">cloud ☁️ VPN setup</g-link>. I got A LOT of mileage out of this "DIY VPN". My friend even used it on his phone without issue!</p>
     <br>
     <h2 class="italic mb-4">I enjoy automating and improving workflows</h2>
     <p>For much of <b>2020</b>, I was hacking on public bug-bounty programs. There are a plethora of existing bug-bounty tools. However, I built my own as a learning exercise and a way to automate repetitive, manual processes. <g-link href="https://github.com/zbo14/sc0pe">This recon 🔍 tool</g-link> allowed me to bulk enumerate in-scope domains for bug bounty programs by simply passing a configuration file from the program's web page.</p>
