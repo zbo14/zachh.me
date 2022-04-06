@@ -76,11 +76,6 @@ export default {
           text: 'Blog'
         },
         {
-          icon: 'money-dollar-circle',
-          path: '/hire/',
-          text: 'Hire'
-        },
-        {
           icon: 'file-music',
           path: '/memos/',
           text: 'Memos'

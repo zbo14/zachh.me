@@ -140,6 +140,24 @@ export default {
 
       jobs: [
         {
+          company: 'Self-employed',
+          role: 'Freelance Software Engineer',
+          start: 'Sep 2021',
+          end: 'present',
+
+          techUsed: [
+            'Cloudflare Pages',
+            'esbuild',
+            'Less CSS',
+            'Puppeteer'
+          ],
+
+          actions: [
+            'Built and deployed several websites',
+            'Provided clients with web scraping services'
+          ]
+        },
+        {
           company: 'Gatherly',
           role: 'Senior Software engineer',
           start: 'Nov 2020',

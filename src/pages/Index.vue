@@ -18,7 +18,17 @@
       </div>
       <div class="flex my-8">
         <p class="my-auto text-lg">
-          > Former engineer at <g-link href="https://starry.com">Starry</g-link> and <g-link href="https://gatherly.io">Gatherly</g-link>
+          > Former software engineer at <g-link href="https://starry.com">Starry</g-link> and <g-link href="https://gatherly.io">Gatherly</g-link>
+        </p>
+      </div>
+      <div class="flex my-8">
+        <p class="my-auto text-lg">
+          > Currently contracting & freelancing
+        </p>
+      </div>
+      <div class="flex my-8">
+        <p class="italic my-auto">
+          Interested in hiring/working together? Let me know: zach{at}zachh{dot}me
         </p>
       </div>
     </div>
