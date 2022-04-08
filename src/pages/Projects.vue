@@ -7,7 +7,7 @@
           <a :href="project.url">{{ name }}</a>
         </h3>
         <p>{{ project.description }}</p>
-        <button class="py-2 underline" @click="() => { demo = ''; demo = name }" v-if="project.demo">
+        <button class="py-2 underline" @click="() => { demo = ''; demo = project.demo }" v-if="project.demo">
           Watch demo
         </button>
         <p class="inline ml-2 text-sm" v-if="project.disclaimer">({{ project.disclaimer }})</p>
@@ -36,10 +36,12 @@
 <script>
 export default {
   methods: {
-    getDemoUrl (name) {
-      const video = require.context('../../static/videos/')
-
-      return video('./' + name + '-demo.mp4')
+    getDemoUrl (demo) {
+      try {
+        return (new URL(demo)).href
+      } catch {
+        return require.context('../../static/videos/')('./' + demo + '-demo.mp4')
+      }
     }
   },
 
@@ -56,7 +58,8 @@ export default {
 
         sightsea: {
           description: '🌊 Web app that allows you to modify pixel RGB values on the fly using formulas',
-          url: 'sightsea.dev'
+          url: 'sightsea.dev',
+          demo: 'https://drive.google.com/file/d/1M6ZYzE3EkTzmZcJOJk3MJrbKgrT96qNe/view?usp=sharing'
         },
 
         site: {
