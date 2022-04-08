@@ -59,7 +59,7 @@ export default {
         sightsea: {
           description: '🌊 Web app that allows you to modify pixel RGB values on the fly using formulas',
           url: 'sightsea.dev',
-          demo: 'https://drive.google.com/file/d/1M6ZYzE3EkTzmZcJOJk3MJrbKgrT96qNe/view?usp=sharing'
+          demo: 'https://drive.google.com/uc?export=download&id=1M6ZYzE3EkTzmZcJOJk3MJrbKgrT96qNe'
         },
 
         site: {
