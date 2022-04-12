@@ -54,13 +54,13 @@ export default {
         },
 
         site: {
-          description: '📐 A simple website starter template!',
+          description: '🧰 A simple website starter kit!',
           url: 'https://github.com/zbo14/site'
         },
 
         spa: {
-          description: '🧰 A Single Page Application (SPA) starter kit',
-          url: 'https://github.com/zbo14/site'
+          description: '📐 A Single Page Application (SPA) template',
+          url: 'https://github.com/zbo14/spa'
         },
 
         'this site :)': {
