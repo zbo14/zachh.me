@@ -50,16 +50,11 @@ export default {
       demo: '',
 
       projects: {
-        citesee: {
-          description: '📑 Chrome extension that makes it easy to link to specific content on web pages.',
-          url: 'https://chrome.google.com/webstore/detail/citesee/kbajkkipmgfdlafeojojmipanljfkoog',
-          demo: 'citesee'
-        },
-
         sightsea: {
           description: '🌊 Web app that allows you to modify pixel RGB values on the fly using formulas',
           url: 'sightsea.dev',
-          demo: 'https://drive.google.com/uc?export=download&id=1M6ZYzE3EkTzmZcJOJk3MJrbKgrT96qNe'
+          demo: 'https://drive.google.com/uc?export=download&id=1M6ZYzE3EkTzmZcJOJk3MJrbKgrT96qNe',
+          disclaimer: 'WARNING: flashing lights'
         },
 
         site: {
@@ -68,8 +63,13 @@ export default {
         },
 
         spa: {
-          description: '📐 A Single Page Application (SPA) template',
+          description: '🧰 A Single Page Application (SPA) starter kit',
           url: 'https://github.com/zbo14/site'
+        },
+
+        'this site :)': {
+          description: 'My personal website',
+          url: 'https://zachh.me'
         }
       }
     }
