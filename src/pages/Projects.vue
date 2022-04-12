@@ -48,7 +48,7 @@ export default {
       projects: {
         sightsea: {
           description: '🌊 Web app that allows you to modify pixel RGB values on the fly using formulas',
-          url: 'sightsea.dev',
+          url: 'https://sightsea.dev',
           demo: 'https://drive.google.com/uc?export=download&id=1M6ZYzE3EkTzmZcJOJk3MJrbKgrT96qNe',
           disclaimer: 'WARNING: flashing lights'
         },
@@ -63,7 +63,7 @@ export default {
           url: 'https://github.com/zbo14/spa'
         },
 
-        'this site :)': {
+        'this site!': {
           description: 'My personal website',
           url: 'https://zachh.me'
         }
