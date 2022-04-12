@@ -37,11 +37,7 @@
 export default {
   methods: {
     getDemoUrl (demo) {
-      try {
-        return (new URL(demo)).href
-      } catch {
-        return require.context('../../static/videos/')('./' + demo + '-demo.mp4')
-      }
+      return (new URL(demo)).href
     }
   },
 
