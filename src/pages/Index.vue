@@ -28,7 +28,7 @@
       </div>
       <div class="flex my-8">
         <p class="italic my-auto">
-          Interested in hiring/working together? Let me know: zach{at}zachh{dot}me
+          Interested in working together? Let me know: zach{at}zachh{dot}me
         </p>
       </div>
     </div>
