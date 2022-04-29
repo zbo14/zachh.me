@@ -46,6 +46,11 @@ export default {
       demo: '',
 
       projects: {
+        ptt: {
+          description: 'Packet Tube Transport: a CLI for directly and securly sharing information with other people. Uses TLS hole punching.',
+          url: 'https://github.com/zbo14/ptt'
+        },
+
         sightsea: {
           description: '🌊 Web app that allows you to modify pixel RGB values on the fly using formulas',
           url: 'https://sightsea.dev',
@@ -54,7 +59,7 @@ export default {
         },
 
         site: {
-          description: '🧰 A simple website starter kit!',
+          description: '🧰 A simple website starter kit! Uses Astro, Vue, Tailwind CSS and other tech I like.',
           url: 'https://github.com/zbo14/site'
         },
 
@@ -66,6 +71,11 @@ export default {
         'this site!': {
           description: 'My personal website',
           url: 'https://zachh.me'
+        },
+
+        'tls-hole-punching': {
+          description: '👊 Hole punching for direct, reliable, and secure p2p communication. I blog about it!',
+          url: 'https://zachh.me/blog/tls-hole-punching'
         }
       }
     }
