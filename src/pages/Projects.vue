@@ -16,7 +16,7 @@
           <g-link class="text-black" v-if="project.blogPost" :href="project.blogPost">
             <i class="ri-article-fill" />
           </g-link>
-          <button class="mr-2" @click="() => { demo = ''; demo = project.demo }" v-if="project.demo">
+          <button class="hover:text-shadow-pink mr-2" @click="() => { demo = ''; demo = project.demo }" v-if="project.demo">
             <i class="ri-play-fill" />
           </button>
         </div>
@@ -80,13 +80,12 @@ export default {
 
         'this site!': {
           description: 'My personal website',
-          website: 'https://zachh.me',
           github: 'https://github.com/zbo14/zachh.me'
         },
 
         'tls-hole-punching': {
           description: '👊 Hole punching for direct, reliable, and secure p2p communication. I blog about it!',
-          github: 'https://zachh.me/blog/tls-hole-punching',
+          github: 'https://github.com/zbo14/tls-hole-punching',
           blogPost: 'http://localhost:8080/blog/tls-hole-punching/'
         }
       }

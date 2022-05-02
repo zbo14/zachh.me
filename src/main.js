@@ -45,6 +45,12 @@ export default function (Vue, { router, head, isClient }) {
 
   head.link.push({
     rel: 'preload',
+    href: getImage('bug.png'),
+    as: 'image'
+  })
+
+  head.link.push({
+    rel: 'preload',
     href: getImage('mitch-bryant.gif'),
     as: 'image'
   })

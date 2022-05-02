@@ -1,6 +1,6 @@
 ---
 slug: "i-really-don't-mind-walking"
-title: "I really don't mind walking"
+title: "I Really Don't Mind Walking"
 date: 2022-05-02
 filename: "i-really-don't-mind-walking.m4a"
 ---
@@ -44,7 +44,7 @@ I want to drop this off
 I really don't mind walking
 Really don't mind
 'Cause when it's you on the other end
-The trip's worth more every step
+The trip's worth more than every step
 
 I really don't mind walking
 You make me wanna go walking
