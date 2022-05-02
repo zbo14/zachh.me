@@ -13,13 +13,6 @@
 
 <script>
 export default {
-  methods: {
-    getAudioURL (filename) {
-      const audio = require.context('../../static/audio/')
-      return audio('./' + filename)
-    }
-  },
-
   metaInfo: {
     title: 'Memos'
   }

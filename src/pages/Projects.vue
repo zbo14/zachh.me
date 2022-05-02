@@ -2,15 +2,25 @@
   <Layout>
     <h1 class="mb-6 sm:mb-8">Projects I've been working on:</h1>
     <ul>
-      <li class="mb-4" v-for="(project, name) in projects">
-        <h3 class="mb-2">
-          <a :href="project.url">{{ name }}</a>
-        </h3>
+      <li class="mb-6" v-for="(project, name) in projects">
+        <div class="flex items-center mb-2">
+          <h3 class="mr-2">
+            {{ name }}
+          </h3>
+          <g-link class="mr-2 text-black" v-if="project.website" :href="project.website">
+            <i class="ri-home-2-fill" />
+          </g-link>
+          <g-link class="mr-2 text-black" v-if="project.github" :href="project.github">
+            <i class="ri-github-fill" />
+          </g-link>
+          <g-link class="text-black" v-if="project.blogPost" :href="project.blogPost">
+            <i class="ri-article-fill" />
+          </g-link>
+          <button class="mr-2" @click="() => { demo = ''; demo = project.demo }" v-if="project.demo">
+            <i class="ri-play-fill" />
+          </button>
+        </div>
         <p>{{ project.description }}</p>
-        <button class="py-2 underline" @click="() => { demo = ''; demo = project.demo }" v-if="project.demo">
-          Watch demo
-        </button>
-        <p class="inline ml-2 text-sm" v-if="project.disclaimer">({{ project.disclaimer }})</p>
       </li>
     </ul>
     <p class="italic mt-8">
@@ -47,35 +57,37 @@ export default {
 
       projects: {
         ptt: {
-          description: 'Packet Tube Transport: a CLI for directly and securly sharing information with other people. Uses TLS hole punching.',
-          url: 'https://github.com/zbo14/ptt'
+          description: 'Packet Tube Transport: a CLI for directly and securly sharing information with other people. Uses TLS hole punching (see below).',
+          github: 'https://github.com/zbo14/ptt'
         },
 
         sightsea: {
-          description: '🌊 Web app that allows you to modify pixel RGB values on the fly using formulas',
-          url: 'https://sightsea.dev',
-          demo: 'https://drive.google.com/uc?export=download&id=1M6ZYzE3EkTzmZcJOJk3MJrbKgrT96qNe',
-          disclaimer: 'WARNING: flashing lights'
+          description: '🌊 Web app that allows you to modify pixel RGB values on the fly using formulas.',
+          website: 'https://sightsea.dev',
+          github: 'https://github.com/zbo14/sightsea.dev',
+          demo: 'https://drive.google.com/uc?export=download&id=1M6ZYzE3EkTzmZcJOJk3MJrbKgrT96qNe'
         },
 
         site: {
           description: '🧰 A simple website starter kit! Uses Astro, Vue, Tailwind CSS and other tech I like.',
-          url: 'https://github.com/zbo14/site'
+          github: 'https://github.com/zbo14/site'
         },
 
         spa: {
           description: '📐 A Single Page Application (SPA) template',
-          url: 'https://github.com/zbo14/spa'
+          github: 'https://github.com/zbo14/spa'
         },
 
         'this site!': {
           description: 'My personal website',
-          url: 'https://zachh.me'
+          website: 'https://zachh.me',
+          github: 'https://github.com/zbo14/zachh.me'
         },
 
         'tls-hole-punching': {
           description: '👊 Hole punching for direct, reliable, and secure p2p communication. I blog about it!',
-          url: 'https://zachh.me/blog/tls-hole-punching'
+          github: 'https://zachh.me/blog/tls-hole-punching',
+          blogPost: 'http://localhost:8080/blog/tls-hole-punching/'
         }
       }
     }
