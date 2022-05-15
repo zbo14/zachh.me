@@ -1,6 +1,6 @@
 <template>
   <Layout>
-    <h1 class="mb-6 sm:mb-8">Projects I've been working on:</h1>
+    <h1 class="mb-6 sm:mb-8">Projects I've worked on:</h1>
     <ul>
       <li class="mb-6" v-for="(project, name) in projects">
         <div class="flex items-center mb-2">
@@ -86,7 +86,12 @@ export default {
         'tls-hole-punching': {
           description: '👊 Hole punching for direct, reliable, and secure p2p communication. I blog about it!',
           github: 'https://github.com/zbo14/tls-hole-punching',
-          blogPost: 'http://localhost:8080/blog/tls-hole-punching/'
+          blogPost: 'http://zachh.me/blog/tls-hole-punching/'
+        },
+
+        vomblog: {
+          description: 'Chronicled chaos',
+          website: 'https://vomblog.pages.dev'
         }
       }
     }
