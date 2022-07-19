@@ -23,7 +23,7 @@
       </div>
       <div class="flex my-8">
         <p class="my-auto text-lg">
-          > Currently building <g-link href="https://wisiwig.co">Wisiwig</g-link>! Interested in <g-link href="https://angel.co/company/wisiwig-app/jobs">working together</g-link>?
+          > Currently building <g-link href="https://wisiwig.co">Wisiwig</g-link>!
         </p>
       </div>
     </div>

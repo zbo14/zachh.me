@@ -66,8 +66,7 @@ export default {
         {
           company: {
             name: 'Wisiwig',
-            link: 'https://wisiwig.co',
-            hiring: 'https://angel.co/company/wisiwig-app/jobs'
+            link: 'https://wisiwig.co'
           },
 
           image: {
