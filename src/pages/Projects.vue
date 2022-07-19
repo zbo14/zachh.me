@@ -92,6 +92,11 @@ export default {
         vomblog: {
           description: 'Chronicled chaos',
           website: 'https://vomblog.pages.dev'
+        },
+
+        whimsee: {
+          description: '👀 👀 👀',
+          website: 'https://whimsee.pages.dev'
         }
       }
     }

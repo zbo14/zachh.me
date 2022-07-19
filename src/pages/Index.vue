@@ -23,12 +23,7 @@
       </div>
       <div class="flex my-8">
         <p class="my-auto text-lg">
-          > Currently contracting & freelancing
-        </p>
-      </div>
-      <div class="flex my-8">
-        <p class="italic my-auto">
-          Interested in working together? Let me know: zach{at}zachh{dot}me
+          > Currently building <g-link href="https://wisiwig.co">Wisiwig</g-link>! Interested in <g-link href="https://angel.co/company/wisiwig-app/jobs">working together</g-link>?
         </p>
       </div>
     </div>

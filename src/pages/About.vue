@@ -65,17 +65,18 @@ export default {
         },
         {
           company: {
-            name: 'Self-employed',
-            link: 'mailto:zach@zachh.me'
+            name: 'Wisiwig',
+            link: 'https://wisiwig.co',
+            hiring: 'https://angel.co/company/wisiwig-app/jobs'
           },
 
           image: {
-            file: 'me.png',
+            file: 'wisiwig.png',
             height: 'h-10',
             width: 'w-10'
           },
 
-          description: 'Now I\'m contracting/freelancing! Feel free to reach out if you\'d like to work together :)'
+          description: 'Now I\'m technical cofounder at Wisiwig (MC\'22), a development platform allowing product designers to build user interfaces and deliver code to engineering teams.'
         }
       ]
     }
