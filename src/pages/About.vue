@@ -10,7 +10,7 @@
         <p v-else class="font-semibold mx-4 my-auto text-black text-lg" :href="step.company.link">{{ step.company.name }}</p>
       </div>
       <div>
-        <p>{{ step.description }}  <g-link class="my-auto" v-if="step.company.hiring" :href="step.company.hiring">And we're looking to grow the team!</g-link></p>
+        <p>{{ step.description }}  <g-link class="my-auto" v-if="step.company.hiring" :href="step.company.hiring.link">{{ step.company.hiring.message || 'And we\'re hiring!' }}</g-link></p>
       </div>
     </div>
   </Layout>
@@ -67,7 +67,10 @@ export default {
           company: {
             name: 'Wisiwig',
             link: 'https://wisiwig.co',
-            hiring: 'https://angel.co/company/wisiwig-app'
+            hiring: {
+              link: 'https://angel.co/company/wisiwig-app',
+              message: 'And we\'re growing our team in Boston!'
+            }
           },
 
           image: {
