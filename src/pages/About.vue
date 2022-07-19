@@ -10,7 +10,7 @@
         <p v-else class="font-semibold mx-4 my-auto text-black text-lg" :href="step.company.link">{{ step.company.name }}</p>
       </div>
       <div>
-        <p>{{ step.description }}  <g-link class="my-auto" v-if="step.company.hiring" :href="step.company.hiring">And we're hiring!</g-link></p>
+        <p>{{ step.description }}  <g-link class="my-auto" v-if="step.company.hiring" :href="step.company.hiring">And we're looking to grow the team!</g-link></p>
       </div>
     </div>
   </Layout>
@@ -66,13 +66,15 @@ export default {
         {
           company: {
             name: 'Wisiwig',
-            link: 'https://wisiwig.co'
+            link: 'https://wisiwig.co',
+            hiring: 'https://angel.co/company/wisiwig-app'
           },
 
           image: {
             file: 'wisiwig.png',
             height: 'h-10',
-            width: 'w-10'
+            width: 'w-10',
+            hiring: 'https://angel.co/company/wisiwig-app'
           },
 
           description: 'Now I\'m technical cofounder at Wisiwig (MC\'22), a development platform allowing product designers to build user interfaces and deliver code to engineering teams.'
