@@ -66,21 +66,16 @@ export default {
         {
           company: {
             name: 'Wisiwig',
-            link: 'https://wisiwig.co',
-            hiring: {
-              link: 'https://angel.co/company/wisiwig-app',
-              message: 'And we\'re growing our team in Boston!'
-            }
+            link: 'https://wisiwig.co'
           },
 
           image: {
             file: 'wisiwig.png',
             height: 'h-10',
             width: 'w-10',
-            hiring: 'https://angel.co/company/wisiwig-app'
           },
 
-          description: 'Now I\'m technical cofounder at Wisiwig (MC\'22), a development platform allowing product designers to build user interfaces and deliver code to engineering teams.'
+          description: 'Now I\'m technical cofounder at Wisiwig (MC\'22), a visual development platform allowing product designers to build user interfaces for web applications and deliver code to engineering teams.'
         }
       ]
     }
