@@ -80,10 +80,9 @@ export default {
 
         Frameworks: [
           'Fastify',
+          'React',
           'Vue',
-          'Nuxt',
-          'Express',
-          'React'
+          'Express'
         ],
 
         Databases: [
@@ -95,7 +94,7 @@ export default {
 
         'Cloud/CDN': [
           'AWS',
-          'Cloudflare Pages',
+          'Cloudflare',
           'Vercel',
           'Netlify',
           'Linode'
@@ -106,7 +105,8 @@ export default {
           'EC2',
           'ELB/ALB',
           'Lambda',
-          'S3'
+          'S3',
+          'API Gateway'
         ],
 
         Proxies: [
@@ -132,29 +132,29 @@ export default {
       interests: [
         'Web applications',
         'Computer networking',
-        'Distributed systems',
         'Cyber Security',
         'Singing / keyboard / saxophone',
-        'Twin Peaks, Midnight Gospel'
+        'Digital art'
       ],
 
       jobs: [
         {
-          company: 'Self-employed',
-          role: 'Freelance Software Engineer',
-          start: 'Sep 2021',
+          company: 'Wisiwig',
+          role: 'Lead Engineer & Cofounder',
+          start: 'Jun 2022',
           end: 'present',
 
           techUsed: [
-            'Cloudflare Pages',
-            'esbuild',
-            'Less CSS',
-            'Puppeteer'
+            'Node+npm',
+            'git+GitHub',
+            'Lambda',
+            'DynamoDB',
+            'React'
           ],
 
           actions: [
-            'Built and deployed several websites',
-            'Provided clients with web scraping services'
+            'Built MVP Chrome extension for pilot program in <6 weeks',
+            'Designed and deployed software infrastructure (REST API, database, React app)'
           ]
         },
         {
@@ -198,7 +198,7 @@ export default {
             'Contributed code and PR review on several projects',
             'Built library to make encryption easier for team',
             'Created SNMP service to configure field hardware',
-            'Wrote full-coverage tests and made infra design decisions'
+            'Wrote full-coverage tests and made infrastructure design decisions'
           ]
         }
       ]

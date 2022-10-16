@@ -68,14 +68,9 @@ export default {
           demo: 'https://drive.google.com/uc?export=download&id=1M6ZYzE3EkTzmZcJOJk3MJrbKgrT96qNe'
         },
 
-        site: {
-          description: '🧰 A simple website starter kit! Uses Astro, Vue, Tailwind CSS and other tech I like.',
-          github: 'https://github.com/zbo14/site'
-        },
-
-        spa: {
-          description: '📐 A Single Page Application (SPA) template',
-          github: 'https://github.com/zbo14/spa'
+        'js-project-template': {
+          description: '📐 A starter template for my JS projects.',
+          github: 'https://github.com/zbo14/js-project-template'
         },
 
         'this site!': {
