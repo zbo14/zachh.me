@@ -86,9 +86,9 @@ export default {
         ],
 
         Databases: [
+          'DynamoDB',
           'MongoDB',
           'Redis',
-          'DynamoDB',
           'SQLite+Sequelize'
         ],
 
@@ -154,7 +154,8 @@ export default {
 
           actions: [
             'Built MVP Chrome extension for pilot program in <6 weeks',
-            'Designed and deployed software infrastructure (REST API, database, React app)'
+            'Designed and deployed REST API, database, and React app',
+            'Set up dashboard to measure user engagement over time'
           ]
         },
         {

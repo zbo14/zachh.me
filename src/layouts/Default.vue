@@ -76,11 +76,6 @@ export default {
           text: 'Blog'
         },
         {
-          icon: 'file-music',
-          path: '/memos/',
-          text: 'Memos'
-        },
-        {
           icon: 'artboard',
           path: '/projects/',
           text: 'Projects'
@@ -98,16 +93,20 @@ export default {
           link: 'https://github.com/zbo14'
         },
         {
-          class: 'ri-npmjs-fill',
-          link: 'https://www.npmjs.com/~zbo14'
-        },
-        {
           class: 'ri-linkedin-fill',
           link: 'https://linkedin.com/in/zachary-balder'
         },
         {
           class: 'ri-twitter-fill',
           link: 'https://twitter.com/digitalAn4log'
+        },
+        {
+          class: 'ri-instagram-fill',
+          link: 'https://www.instagram.com/zachbalder'
+        },
+        {
+          class: 'ri-soundcloud-fill',
+          link: 'https://soundcloud.com/zach-902102244'
         }
       ],
 
