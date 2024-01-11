@@ -8,7 +8,8 @@ const tailwindcss = require('tailwindcss')
 
 module.exports = {
   siteName: 'Zach Balder',
-  siteUrl: 'https://zachh.me',
+  siteUrl: 'https://zbo14.github.io',
+  pathPrefix: '/zachh.me',
 
   configureWebpack: {
     module: {
